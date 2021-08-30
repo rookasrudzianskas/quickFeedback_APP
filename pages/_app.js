@@ -1,6 +1,6 @@
-import {AuthProvider} from "../lib/auth";
+import {AuthProvider} from "@/lib/auth";
 import {CSSReset, ThemeProvider} from "@chakra-ui/core";
-import customTheme from "../styles/theme";
+import customTheme from "@/styles/theme";
 import {Head} from "next/document";
 
 
