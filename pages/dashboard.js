@@ -7,7 +7,7 @@ import EmptyState from "@/components/EmptyState";
 
 // import {useAuth} from "@/lib/auth";
 
-export default function Home() {
+const Dashboard = () => {
 
     const auth = useAuth();
 
@@ -28,7 +28,9 @@ export default function Home() {
                 <Button mt={6} varian="link" size="sm" onClick={(e) => auth.signinWithGithub()}>Sign In</Button>
             )}
         </Flex>
-    )
-}
+    );
+};
 
 // the start screen working cool
+
+export default Dashboard;
