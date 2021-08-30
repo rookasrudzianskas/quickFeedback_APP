@@ -1,8 +1,13 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import {auth} from "firebase";
+import {useAuth} from "../lib/auth";
 
 export default function Home() {
+
+    const auth = useAuth();
+
   return (
     <div className={styles.container}>
       <Head>
@@ -13,6 +18,11 @@ export default function Home() {
 
       <main className={styles.main}>
             <h1>Quick Feedback</h1>
+
+          <button onClick={(e) => auth.signinWithGithub()}>Sign In</button>
+          <div>
+              {auth?.user}
+          </div>
       </main>
 
       <footer className={styles.footer}>
