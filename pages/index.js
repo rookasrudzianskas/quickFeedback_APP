@@ -1,9 +1,10 @@
 import Image from 'next/image'
 import { Box, Button, Flex, Text, Icon, Link, Stack, Heading, Code } from '@chakra-ui/core';
 import Head from "next/Head";
-
-
 import {useAuth} from "@/lib/auth";
+
+
+// import {useAuth} from "@/lib/auth";
 
 export default function Home() {
 
@@ -16,13 +17,16 @@ export default function Home() {
         </Head>
 
             <Icon name="logo" color="black" size="64px" />
+          <Text noOfLines={2} fontSize="5xl">Quick Feedback</Text>
 
 
           {auth.user ? (
-              <Button mt={4} onClick={(e) => auth.signout()}>Sign Out</Button>
+              <Button mt={6} onClick={(e) => auth.signout()}>Sign Out</Button>
           ) : (
-              <Button mt={4} varian="link" size="sm" onClick={(e) => auth.signinWithGithub()}>Sign In</Button>
+              <Button mt={6} varian="link" size="sm" onClick={(e) => auth.signinWithGithub()}>Sign In</Button>
           )}
       </Flex>
   )
 }
+
+// the start screen working something
