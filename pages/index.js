@@ -17,12 +17,13 @@ export default function Home() {
         </Head>
 
             <Icon name="logo" color="black" size="64px" />
+          <Text noOfLines={2} fontSize="5xl">Quick Feedback</Text>
 
 
           {auth.user ? (
-              <Button mt={4} onClick={(e) => auth.signout()}>Sign Out</Button>
+              <Button mt={6} onClick={(e) => auth.signout()}>Sign Out</Button>
           ) : (
-              <Button mt={4} varian="link" size="sm" onClick={(e) => auth.signinWithGithub()}>Sign In</Button>
+              <Button mt={6} varian="link" size="sm" onClick={(e) => auth.signinWithGithub()}>Sign In</Button>
           )}
       </Flex>
   )
