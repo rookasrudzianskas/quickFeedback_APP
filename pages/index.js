@@ -1,8 +1,6 @@
-import Image from 'next/image'
 import { Box, Button, Flex, Text, Icon, Link, Stack, Heading, Code } from '@chakra-ui/core';
 import Head from "next/head";
 import {useAuth} from "@/lib/auth";
-import EmptyState from "@/components/EmptyState";
 
 
 // import {useAuth} from "@/lib/auth";
@@ -22,8 +20,7 @@ export default function Home() {
 
 
           {auth.user ? (
-              // <Button mt={6} onClick={(e) => auth.signout()}>Sign Out</Button>
-              <EmptyState />
+              <Button mt={6} onClick={(e) => auth.signout()}>Sign Out</Button>
           ) : (
               <Button mt={6} varian="link" size="sm" onClick={(e) => auth.signinWithGithub()}>Sign In</Button>
           )}
