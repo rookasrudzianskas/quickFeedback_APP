@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import {useAuth} from "../lib/auth";
+import { useTheme, ThemeProvider, withTheme } from '@emotion/react'
 
 export default function Home() {
 
