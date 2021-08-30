@@ -17,6 +17,7 @@ export default function Home() {
 
       <main>
             <Heading>Quick Feedback</Heading>
+            <Icon name="logo" color="black" size="32px" />
 
           <Text>
               Current user: <Code>{auth.user ? auth.user.email : "There is no user currently on 🔥"}</Code>
