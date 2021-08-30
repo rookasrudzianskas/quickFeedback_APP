@@ -12,7 +12,6 @@ class MyDocument extends Document {
                         content="/favicons/browserconfig.xml"
                         name="msapplication-config"
                     />
-                    <title>Quick Feedback App</title>
                     <link rel="icon" href="/assets/LOGO.png" />
                     {/*<link href="/favicons/site.webmanifest" rel="manifest" />*/}
                     <link
