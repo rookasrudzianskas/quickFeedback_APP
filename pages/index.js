@@ -20,7 +20,7 @@ export default function Home() {
 
           <button onClick={(e) => auth.signinWithGithub()}>Sign In</button>
           <div>
-              {auth?.user}
+              {auth?.user?.email}
           </div>
       </main>
 
