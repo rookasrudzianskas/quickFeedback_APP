@@ -1,5 +1,5 @@
 {
-  "name": "intellar",
+  "name": "quickfeedback",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,7 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@chakra-ui/core": "^0.8.0",
+    "@emotion/core": "^10.0.28",
+    "@emotion/styled": "^10.0.27",
+    "emotion-theming": "^10.0.27",
+
     "firebase": "^8.6.8",
+    "framer-motion": "^4",
     "next": "11.1.0",
     "react": "17.0.2",
     "react-dom": "17.0.2"
