@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import {useAuth} from "../lib/auth";
 import { Box, Button, Flex, Text, Icon, Link, Stack } from '@chakra-ui/core';
+import Head from "next/Head";
 
 export default function Home() {
 
@@ -8,6 +9,10 @@ export default function Home() {
 
   return (
     <div>
+        <Head>
+            <title>Something cool</title>
+        </Head>
+
       <main>
             <h1>Quick Feedback</h1>
 

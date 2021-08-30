@@ -6,13 +6,11 @@ import {Head} from "next/document";
 
 function MyApp({ Component, pageProps }) {
   return (
-     <>
        <ThemeProvider theme={theme}>
            <AuthProvider>
                 <Component {...pageProps} />
            </AuthProvider>
         </ThemeProvider>
-     </>
   )
 }
 
