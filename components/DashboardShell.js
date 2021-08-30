@@ -12,8 +12,7 @@ import {
     Box,
     Text,
     Button
-} from '@chakra-ui/react'
-import { AddIcon } from '@chakra-ui/icons'
+} from '@chakra-ui/react';
 
 const DashboardShell = () => (
         <Flex flexDirection="column">
