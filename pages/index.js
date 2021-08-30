@@ -10,13 +10,11 @@ export default function Home() {
     const auth = useAuth();
 
   return (
-    <div>
+      <Flex as="main" direction="column" align="center" justify="center" maxW="300px">
         <Head>
             <title>Something cool</title>
         </Head>
 
-      <main>
-            <Heading>Quick Feedback</Heading>
             <Icon name="logo" color="black" size="32px" />
 
           <Text>
@@ -28,8 +26,6 @@ export default function Home() {
           ) : (
               <Button onClick={(e) => auth.signinWithGithub()}>Sign In</Button>
           )}
-      </main>
-
-    </div>
+      </Flex>
   )
 }
