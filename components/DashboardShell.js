@@ -55,4 +55,4 @@ const DashboardShell = () => (
         </Flex>
 )
 
-export default DashboardShell
+export default DashboardShell;

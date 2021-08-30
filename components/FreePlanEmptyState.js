@@ -28,4 +28,4 @@ const FreePlanEmptyState = () => (
     </DashboardShell>
 )
 
-export default DashboardShell
+export default FreePlanEmptyState;
