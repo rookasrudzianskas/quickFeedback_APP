@@ -1,9 +1,10 @@
 import Image from 'next/image'
 import { Box, Button, Flex, Text, Icon, Link, Stack, Heading, Code } from '@chakra-ui/core';
 import Head from "next/Head";
-
-
 import {useAuth} from "@/lib/auth";
+
+
+// import {useAuth} from "@/lib/auth";
 
 export default function Home() {
 
@@ -26,3 +27,5 @@ export default function Home() {
       </Flex>
   )
 }
+
+// the start screen working
