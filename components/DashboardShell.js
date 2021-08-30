@@ -21,8 +21,8 @@ const DashboardShell = ({children}) => (
                 justifyContent="space-between"
                 p={4}
             >
-                <Stack spacing={4} isInline alignItems="center">
-                    <Icon name="logo" color="black"/>
+                <Stack spacing={4} isInline align="center">
+                    <Icon name="logo" color="black" size="24px"/>
                     <Link>Sites</Link>
                     <Link>Feedback</Link>
                 </Stack>
