@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import {useAuth} from "../lib/auth";
-import { useTheme, ThemeProvider, withTheme } from '@emotion/react'
+import { Box, Button, Flex, Text, Icon, Link, Stack } from '@chakra-ui/core';
 
 export default function Home() {
 
