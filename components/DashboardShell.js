@@ -32,17 +32,20 @@ const DashboardShell = ({children}) => (
                 </Flex>
             </Flex>
             <Flex backgroundColor="blackAlpha.50" p={8} height="100%">
-                <Flex justifyContent="center" alignItems="center" ml="auto" mr="auto">
+                <Flex
+                    w="100%"
+                    ml="auto"
+                    mr="auto"
+                    direction="column"
+                    maxWidth="800px">
                     <Breadcrumb />
-                    <Flex flexDirection="column">
                         <Breadcrumb>
                             <BreadcrumbItem isCurrentPage>
                                 <BreadcrumbLink>Sites/</BreadcrumbLink>
                             </BreadcrumbItem>
                         </Breadcrumb>
-                        <Heading>My Sites</Heading>
+                        <Heading mb={4}>My Sites</Heading>
                         {children}
-                    </Flex>
                 </Flex>
             </Flex>
         </Flex>
