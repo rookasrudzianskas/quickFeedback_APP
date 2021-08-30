@@ -10,27 +10,21 @@ import EmptyState from "@/components/EmptyState";
 const Dashboard = () => {
 
     const auth = useAuth();
+    if(!auth.user) {
+        return 'Loading...';
+    }
 
     return (
-        <Flex as="main" direction="column" align="center" justify="center" h="100vh">
+        <>
             <Head>
-                <title>Something cool</title>
+                <title>Dashboard</title>
             </Head>
 
-            <Icon name="logo" color="black" size="64px" />
-            <Text noOfLines={2} fontSize="5xl">Quick Feedback</Text>
-
-
-            {auth.user ? (
-                // <Button mt={6} onClick={(e) => auth.signout()}>Sign Out</Button>
                 <EmptyState />
-            ) : (
-                <Button mt={6} varian="link" size="sm" onClick={(e) => auth.signinWithGithub()}>Sign In</Button>
-            )}
-        </Flex>
+
+        </>
     );
 };
 
-// the start screen working cool
 
 export default Dashboard;
