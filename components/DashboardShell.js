@@ -31,7 +31,7 @@ const DashboardShell = ({children}) => (
                     <Avatar size="sm" />
                 </Flex>
             </Flex>
-            <Flex backgroundColor="blackAlpha.50" p={8} height="100%">
+            <Flex backgroundColor="blackAlpha.50" p={8} height="100vh">
                 <Flex
                     w="100%"
                     ml="auto"
