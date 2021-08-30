@@ -1,7 +1,9 @@
 import Image from 'next/image'
-import {useAuth} from "../lib/auth";
-import { Box, Button, Flex, Text, Icon, Link, Stack } from '@chakra-ui/core';
+import { Box, Button, Flex, Text, Icon, Link, Stack, Heading, Code } from '@chakra-ui/core';
 import Head from "next/Head";
+
+
+import {useAuth} from "../lib/auth";
 
 export default function Home() {
 
@@ -14,16 +16,16 @@ export default function Home() {
         </Head>
 
       <main>
-            <h1>Quick Feedback</h1>
+            <Heading>Quick Feedback</Heading>
 
-          <p>
-              Current user: <code>{auth.user ? auth.user.email : "There is no user currently on 🔥"}</code>
-          </p>
+          <Text>
+              Current user: <Code>{auth.user ? auth.user.email : "There is no user currently on 🔥"}</Code>
+          </Text>
 
           {auth.user ? (
-              <button onClick={(e) => auth.signout()}>Sign Out</button>
+              <Button onClick={(e) => auth.signout()}>Sign Out</Button>
           ) : (
-              <button onClick={(e) => auth.signinWithGithub()}>Sign In</button>
+              <Button onClick={(e) => auth.signinWithGithub()}>Sign In</Button>
           )}
       </main>
 
