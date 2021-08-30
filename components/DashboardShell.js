@@ -15,7 +15,7 @@ import {
 } from '@chakra-ui/core';
 
 const DashboardShell = ({children}) => (
-        <Flex flexDirection="column">
+        <Flex flexDirection="column" height="100vh">
             <Flex
                 backgroundColor="white"
                 justifyContent="space-between"
