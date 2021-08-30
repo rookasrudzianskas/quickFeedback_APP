@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import { Box, Button, Flex, Text, Icon, Link, Stack, Heading, Code } from '@chakra-ui/core';
-import Head from "next/Head";
+import Head from "next/head";
 import {useAuth} from "@/lib/auth";
 
 
