@@ -26,6 +26,3 @@ export default function Home() {
       </Flex>
   )
 }
-
-// dashboard is coming
-// dashboard is coming
