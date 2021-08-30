@@ -23,7 +23,7 @@ const DashboardShell = () => (
                 p={4}
             >
                 <Stack spacing={4} isInline alignItems="center">
-                    <Icon name="logo" />
+                    <Icon name="logo" color="black"/>
                     <Link>Sites</Link>
                     <Link>Feedback</Link>
                 </Stack>
