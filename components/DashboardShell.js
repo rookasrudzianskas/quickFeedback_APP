@@ -12,7 +12,7 @@ import {
     Box,
     Text,
     Button
-} from '@chakra-ui/react';
+} from '@chakra-ui/core';
 
 const DashboardShell = ({children}) => (
         <Flex flexDirection="column">
