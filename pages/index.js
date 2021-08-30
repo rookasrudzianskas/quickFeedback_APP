@@ -29,4 +29,4 @@ export default function Home() {
   )
 }
 
-// the start screen working
+// the start screen working cool
