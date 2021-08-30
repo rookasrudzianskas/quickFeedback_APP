@@ -1,13 +1,14 @@
 import {AuthProvider} from "../lib/auth";
-import {ThemeProvider} from "@chakra-ui/core";
-import theme from "../styles/theme";
+import {CSSReset, ThemeProvider} from "@chakra-ui/core";
+import customTheme from "../styles/theme";
 import {Head} from "next/document";
 
 
 function MyApp({ Component, pageProps }) {
   return (
-       <ThemeProvider theme={theme}>
+       <ThemeProvider theme={customTheme}>
            <AuthProvider>
+               <CSSReset />
                 <Component {...pageProps} />
            </AuthProvider>
         </ThemeProvider>
