@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import styles from '../styles/Home.module.css'
 import {useAuth} from "../lib/auth";
 
 export default function Home() {
@@ -15,7 +14,7 @@ export default function Home() {
         <link rel="icon" href="/assets/LOGO.png" />
       </Head>
 
-      <main className={styles.main}>
+      <main className=''>
             <h1 className="title">Quick Feedback</h1>
 
           <p className='description'>
@@ -31,14 +30,14 @@ export default function Home() {
           )}
       </main>
 
-      <footer className={styles.footer}>
+      <footer className=''>
         <a
           href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
           target="_blank"
           rel="noopener noreferrer"
         >
           Powered by{' '}
-          <span className={styles.logo}>
+          <span className=''>
             <Image src="/assets/LOGO/1x/Artboard 3.png" alt="Vercel Logo" width={72} height={16} objectFit={'cover'} />
           </span>
         </a>
