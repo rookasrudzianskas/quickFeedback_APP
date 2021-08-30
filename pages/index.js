@@ -19,6 +19,7 @@ export default function Home() {
             <h1>Quick Feedback</h1>
 
           <button onClick={(e) => auth.signinWithGithub()}>Sign In</button>
+          {auth?.user && <button onClick={(e) => auth.signout()}>Sign Out</button>}
           <div>
               {auth?.user?.email}
           </div>
