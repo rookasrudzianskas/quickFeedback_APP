@@ -1,7 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import {auth} from "firebase";
 import {useAuth} from "../lib/auth";
 
 export default function Home() {
