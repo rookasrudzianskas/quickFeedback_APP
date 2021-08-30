@@ -3,7 +3,7 @@ import { Box, Button, Flex, Text, Icon, Link, Stack, Heading, Code } from '@chak
 import Head from "next/Head";
 
 
-import {useAuth} from "../lib/auth";
+import {useAuth} from "@/lib/auth";
 
 export default function Home() {
 
