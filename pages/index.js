@@ -19,12 +19,12 @@ export default function Home() {
             <h1 className="title">Quick Feedback</h1>
 
           <p className='description'>
-              {/*Current user: <code>{auth?.user}</code>*/}
+              Current user: <code>{auth.user ? auth.user.email : "There is no user currently on 🔥"}</code>
           </p>
           <div>
               {auth?.user?.email}
           </div>
-          {auth?.user ? (
+          {auth.user ? (
               <button onClick={(e) => auth.signout()}>Sign Out</button>
           ) : (
               <button onClick={(e) => auth.signinWithGithub()}>Sign In</button>
