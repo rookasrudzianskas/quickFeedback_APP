@@ -55,7 +55,18 @@ const DashboardShell = ({children}) => {
                         </Breadcrumb>
                     <Flex>
                         <Heading flexGrow="1" mb={4}>My Sites</Heading>
-                            <Button fontWeight="medium" maxW="200px" colorScheme="black" size="md">
+                            <Button
+                                maxW="200px"
+                                backgroundColor="gray.900"
+                                color="white"
+                                fontWeight="medium"
+                                size="md"
+                                _hover={{ bg: 'gray.700' }}
+                                _active={{
+                                bg: 'gray.800',
+                                transform: 'scale(0.95)'
+                            }}
+                            >
                                 + Add Site
                             </Button>
                     </Flex>
