@@ -38,6 +38,9 @@ const InitialFocus = () => {
             duration: 5000,
             isClosable: true,
         });
+
+        mutate('api/sites');
+        onClose();
     }
 
     return (
