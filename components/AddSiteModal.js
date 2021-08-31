@@ -16,7 +16,7 @@ const InitialFocus = () => {
     const { handleSubmit, register, errors } = useForm();
     const initialRef = React.useRef();
 
-    const createSite = values => console.log(values);
+    const createSite = (values) => console.log(values);
 
     return (
         <>
@@ -40,7 +40,7 @@ const InitialFocus = () => {
                                 ref={initialRef}
                                 placeholder="My site"
                                 name="site"
-                                register={register} required
+                                {...register("site")}
                             />
                         </FormControl>
 
@@ -49,7 +49,7 @@ const InitialFocus = () => {
                             <Input
                                 placeholder="https://byroookas.com"
                                 name="url"
-                                register={register} required
+                                {...register("link")}
                             />
                         </FormControl>
                     </ModalBody>
