@@ -8,12 +8,15 @@ import {
     ModalCloseButton, Button, FormControl, FormLabel, Input, useDisclosure, Flex,
 } from "@chakra-ui/core";
 import React from "react";
+import {useForm} from "react-hook-form";
 
 
 const InitialFocus = () => {
     const { isOpen, onOpen, onClose } = useDisclosure();
-
+    const { handleSubmit, register, errors } = useForm();
     const initialRef = React.useRef();
+
+    const createSite = values => console.log(values);
 
     return (
         <>
@@ -27,24 +30,24 @@ const InitialFocus = () => {
                 onClose={onClose}
             >
                 <ModalOverlay />
-                <ModalContent>
-                    <ModalHeader>Add Site</ModalHeader>
+                <ModalContent as="form" onSubmit={handleSubmit(createSite)}>
+                    <ModalHeader fontWeight="bold">Add Site</ModalHeader>
                     <ModalCloseButton />
                     <ModalBody pb={6}>
                         <FormControl>
                             <FormLabel>Name</FormLabel>
-                            <Input ref={initialRef} placeholder="My site" />
+                            <Input ref={initialRef} placeholder="My site" name="site" ref={register({required: "Required"})} />
                         </FormControl>
 
                         <FormControl mt={4}>
                             <FormLabel>Link</FormLabel>
-                            <Input placeholder="https://byroookas.com" />
+                            <Input placeholder="https://byroookas.com" name="url" ref={register({required: "Required"})} />
                         </FormControl>
                     </ModalBody>
 
                     <ModalFooter>
-                        <Button onClick={onClose} mr={3}>Save</Button>
-                        <Button variantColor="teal" >Create</Button>
+                        <Button onClick={onClose} mr={3} fontWeight="medium">Cancel</Button>
+                        <Button backgroundColor="#99FFEE" color="#194D4C" fontWeight="medium" type="submit" >Create</Button>
                     </ModalFooter>
                 </ModalContent>
             </Modal>
