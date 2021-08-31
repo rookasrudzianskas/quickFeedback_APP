@@ -10,6 +10,7 @@ import {
 import React from "react";
 import {useForm} from "react-hook-form";
 import {createSite} from "@/lib/db";
+import {useAuth} from "@/lib/auth";
 
 
 const InitialFocus = () => {
@@ -17,8 +18,11 @@ const InitialFocus = () => {
     const { handleSubmit, register } = useForm();
     const initialRef = React.useRef();
 
-    const onCreateSite = (values) => {
-        createSite(values);
+    const user = useAuth();
+    // console.log(user.user.uid);
+    const uuid = user.user.uid;
+    const onCreateSite = (values, uuid) => {
+        createSite(values, uuid);
     }
 
     return (
