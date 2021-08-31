@@ -6,12 +6,12 @@ import EmptyState from "@/components/EmptyState";
 import SiteTableSkeleton from "@/components/SiteTableSkeleton";
 import DashboardShell from "@/components/DashboardShell";
 import useSWR from "swr";
+import fetcher from "../utils/fetcher";
 
 
 // import {useAuth} from "@/lib/auth";
 
 const Dashboard = () => {
-    const fetcher = (url) => fetch(url).then((res) => res.json());
     const { data, error } = useSWR('/api/sites', fetcher);
 
     console.log("Data", data);
