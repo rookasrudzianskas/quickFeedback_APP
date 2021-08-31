@@ -9,6 +9,7 @@ import {
 } from "@chakra-ui/core";
 import React from "react";
 import {useForm} from "react-hook-form";
+import {createSite} from "@/lib/db";
 
 
 const InitialFocus = () => {
@@ -16,7 +17,9 @@ const InitialFocus = () => {
     const { handleSubmit, register, errors } = useForm();
     const initialRef = React.useRef();
 
-    const createSite = (values) => console.log(values);
+    const onCreateSite = (values) => {
+        createSite(values);
+    }
 
     return (
         <>
@@ -56,7 +59,7 @@ const InitialFocus = () => {
 
                     <ModalFooter>
                         <Button onClick={onClose} mr={3} fontWeight="medium">Cancel</Button>
-                        <Button backgroundColor="#99FFEE" color="#194D4C" fontWeight="medium" type="submit" >Create</Button>
+                        <Button backgroundColor="#99FFEE" color="#194D4C" fontWeight="medium" type="submit" onClick={onCreateSite} >Create</Button>
                     </ModalFooter>
                 </ModalContent>
             </Modal>
