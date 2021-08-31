@@ -15,7 +15,7 @@ import useSWR, { mutate } from 'swr';
 
 
 
-const InitialFocus = () => {
+const InitialFocus = ({children}) => {
     const { isOpen, onOpen, onClose } = useDisclosure();
     const { handleSubmit, register, errors } = useForm();
     const initialRef = React.useRef();
@@ -45,9 +45,22 @@ const InitialFocus = () => {
 
     return (
         <>
-            <Button onClick={onOpen} fontWeight="medium" maxW="200px" variant="solid" size="md">
-                Add Your First Site
+            <Button
+                maxW="200px"
+                onClick={onOpen}
+                backgroundColor="gray.900"
+                color="white"
+                fontWeight="medium"
+                size="md"
+                _hover={{ bg: 'gray.700' }}
+                _active={{
+                    bg: 'gray.800',
+                    transform: 'scale(0.95)'
+                }}
+            >
+                {children}
             </Button>
+
             <Modal rounded="md" isOpen={isOpen} onClose={onClose}>
                 <ModalOverlay />
                 <ModalContent rounded="md" as="form" onSubmit={handleSubmit(onCreateSite)}>
