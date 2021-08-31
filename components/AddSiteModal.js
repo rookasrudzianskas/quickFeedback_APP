@@ -10,6 +10,7 @@ import {
 import React from "react";
 import {useForm} from "react-hook-form";
 import {createSite} from "@/lib/db";
+import {useAuth} from "@/lib/auth";
 
 
 
@@ -18,10 +19,15 @@ const InitialFocus = () => {
     const { handleSubmit, register, errors } = useForm();
     const initialRef = React.useRef();
     const toast = useToast();
+    const auth = useAuth();
 
     const onCreateSite = (values) => {
 
-        createSite(values);
+        createSite({
+            authorId: auth.user.uid,
+            createdAt: new Date().toISOString(),
+            ...values,
+        });
         toast({
             title: "Success!",
             description: "We've created added your site.",
