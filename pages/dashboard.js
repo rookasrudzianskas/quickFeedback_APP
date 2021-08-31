@@ -7,6 +7,7 @@ import SiteTableSkeleton from "@/components/SiteTableSkeleton";
 import DashboardShell from "@/components/DashboardShell";
 import useSWR from "swr";
 import fetcher from "../utils/fetcher";
+import SiteTable from "@/components/SiteTable";
 
 
 // import {useAuth} from "@/lib/auth";
@@ -38,7 +39,7 @@ const Dashboard = () => {
             </Head>
 
             <DashboardShell>
-                <EmptyState />
+                {data.sites ? <SiteTable sites={data.sites} /> : <EmptyState />}
             </DashboardShell>
 
         </>
