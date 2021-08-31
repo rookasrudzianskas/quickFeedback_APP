@@ -2,25 +2,28 @@
 
 import {db} from "@/lib/firebase";
 
-export default function handler(_, res) {
-  const sitesRef = db.collection("sites");
+export default async function handler(_, res) {
+    const snapshot = await db.collection("sites").get();
 
-  const getDoc = sitesRef
-      .get()
-      .then((doc) => {
+    snapshot.forEach(doc => {
+        console.log(doc.id, '=>', doc.data());
+    });
 
-        if(!doc.exists) {
-            console.log('No such document!');
-          }
+    const getDoc = sitesRef
+        .then((doc) => {
 
-          res.status(200).json(doc.data());
+            if (!doc.exists) {
+                console.log('No such document!');
+            }
 
-      })
-          .catch((err) =>  {
+            res.status(200).json(doc.data());
+
+        })
+        .catch((err) => {
             console.log("Error getting document", err);
-          })
+        })
 
-        res.status(200).json({ name: "Rokas" });
+    res.status(200).json({name: "Rokas"});
 
 };
 
