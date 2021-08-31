@@ -11,7 +11,7 @@ export default async function handler(_, res) {
         console.log(doc.id, '=>', doc.data());
     });
 
-    res.status(200).json(sites);
+    res.status(200).json({sites});
 
 };
 
