@@ -18,6 +18,9 @@ import {useAuth} from "@/lib/auth";
 const DashboardShell = ({children}) => {
 
     const auth = useAuth();
+    const signOut = () => {
+        auth.signout();
+    }
 
     return  (
         <Flex flexDirection="column" height="100vh">
@@ -33,7 +36,7 @@ const DashboardShell = ({children}) => {
                     <Link>Feedback</Link>
                 </Stack>
                 <Flex justifyContent="flex-start" alignItems="center">
-                    {auth.user && <Link mr={4}>Account</Link>}
+                    {auth.user && <Link onClick={() => signOut()} mr={4}>Log Out</Link>}
                     <Avatar size="sm" src={auth?.user?.photoUrl} />
                 </Flex>
             </Flex>
