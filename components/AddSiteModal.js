@@ -39,7 +39,7 @@ const InitialFocus = ({children}) => {
             isClosable: true,
         });
 
-        mutate('api/sites');
+        mutate('api/sites', {...data, name: newName });
         onClose();
     }
 
