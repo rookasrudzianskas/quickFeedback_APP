@@ -32,7 +32,7 @@ const InitialFocus = () => {
             title: "Success!",
             description: "We've created added your site.",
             status: "success",
-            position: "top-right",
+            position: "bottom",
             duration: 5000,
             isClosable: true,
         });
