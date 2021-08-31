@@ -13,7 +13,7 @@ export default function handler(_, res) {
             console.log('No such document!');
           }
 
-          res.status(200).json({ name: "Rokas" });
+          res.status(200).json(doc.data());
 
       })
           .catch((err) =>  {
