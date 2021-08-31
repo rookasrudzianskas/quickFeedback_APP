@@ -9,64 +9,82 @@ import {
 } from "@chakra-ui/core";
 import React from "react";
 import {useForm} from "react-hook-form";
-import {createSite} from "@/lib/db";
-import {useAuth} from "@/lib/auth";
 
 
 const InitialFocus = () => {
     const { isOpen, onOpen, onClose } = useDisclosure();
-    const { handleSubmit, register } = useForm();
+    const { handleSubmit, register, errors } = useForm();
     const initialRef = React.useRef();
 
-    const user = useAuth();
-    // console.log(user.user.uid);
     const onCreateSite = (values) => {
         createSite(values);
     }
 
     return (
         <>
-            <Button onClick={onOpen} fontWeight="medium" maxW="200px" variant="solid" size="md">
-                Add Your First Site
-            </Button>
-
-            <Modal
-                initialFocusRef={initialRef}
-                isOpen={isOpen}
-                onClose={onClose}
-            >
+            {/*<Button*/}
+            {/*    id="add-site-modal-button"*/}
+            {/*    onClick={onOpen}*/}
+            {/*    backgroundColor="gray.900"*/}
+            {/*    color="white"*/}
+            {/*    fontWeight="medium"*/}
+            {/*    _hover={{ bg: 'gray.700' }}*/}
+            {/*    _active={{*/}
+            {/*        bg: 'gray.800',*/}
+            {/*        transform: 'scale(0.95)'*/}
+            {/*    }}*/}
+            {/*>*/}
+            {/*    {children}*/}
+            {/*</Button>*/}
+            <Modal isOpen={isOpen} onClose={onClose}>
                 <ModalOverlay />
-                <ModalContent as="form"  onSubmit={handleSubmit(createSite)}>
+                <ModalContent as="form" onSubmit={handleSubmit(onCreateSite)}>
                     <ModalHeader fontWeight="bold">Add Site</ModalHeader>
                     <ModalCloseButton />
                     <ModalBody pb={6}>
                         <FormControl>
                             <FormLabel>Name</FormLabel>
                             <Input
-                                ref={initialRef}
+                                id="site-input"
                                 placeholder="My site"
-                                name="site"
-                                {...register("site")}
+                                name="name"
+                                ref={register({
+                                    required: 'Required'
+                                })}
                             />
                         </FormControl>
 
                         <FormControl mt={4}>
                             <FormLabel>Link</FormLabel>
                             <Input
-                                placeholder="https://byroookas.com"
+                                id="link-input"
+                                placeholder="https://website.com"
                                 name="url"
-                                {...register("url")}
+                                ref={register({
+                                    required: 'Required'
+                                })}
                             />
                         </FormControl>
                     </ModalBody>
 
                     <ModalFooter>
-                        <Button onClick={onClose} mr={3} fontWeight="medium">Cancel</Button>
-                        <Button backgroundColor="#99FFEE" color="#194D4C" fontWeight="medium" type="submit" onClick={onCreateSite} >Create</Button>
+                        <Button onClick={onClose} mr={3} fontWeight="medium">
+                            Cancel
+                        </Button>
+                        <Button
+                            id="create-site-button"
+                            backgroundColor="#99FFFE"
+                            color="#194D4C"
+                            fontWeight="medium"
+                            type="submit"
+                        >
+                            Create
+                        </Button>
                     </ModalFooter>
                 </ModalContent>
             </Modal>
         </>
+
     )
 }
 
