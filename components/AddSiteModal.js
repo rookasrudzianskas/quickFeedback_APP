@@ -12,10 +12,12 @@ import {useForm} from "react-hook-form";
 import {createSite} from "@/lib/db";
 import {useAuth} from "@/lib/auth";
 import useSWR, { mutate } from 'swr';
+import fetcher from "../utils/fetcher";
 
 
 
 const InitialFocus = ({children}) => {
+    const { data, error } = useSWR('/api/sites', fetcher);
     const { isOpen, onOpen, onClose } = useDisclosure();
     const { handleSubmit, register, errors } = useForm();
     const initialRef = React.useRef();
@@ -23,13 +25,14 @@ const InitialFocus = ({children}) => {
     const auth = useAuth();
 
     const onCreateSite = ({name, url}) => {
-
-        createSite({
+        const newSite = {
             authorId: auth.user.uid,
             createdAt: new Date().toISOString(),
             name,
             url,
-        });
+        };
+
+        createSite(newSite);
         toast({
             title: "Success!",
             description: "We've created added your site.",
@@ -39,7 +42,7 @@ const InitialFocus = ({children}) => {
             isClosable: true,
         });
 
-        mutate('api/sites', {...data, name: newName });
+        mutate('api/sites', { sites: [...data.sites, newSite] });
         onClose();
     }
 

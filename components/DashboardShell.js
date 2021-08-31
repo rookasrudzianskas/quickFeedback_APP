@@ -25,22 +25,24 @@ const DashboardShell = ({children}) => {
 
     return  (
         <Flex flexDirection="column" height="100vh">
-            <Flex
-                backgroundColor="white"
-                justifyContent="space-between"
-                py={4}
-                px={8}
-            >
-                <Stack spacing={4} isInline align="center">
-                    <Icon name="logo" color="black" size="24px"/>
-                    <Link>Sites</Link>
-                    <Link>Feedback</Link>
-                </Stack>
-                <Flex justifyContent="flex-start" alignItems="center">
-                    {auth.user && <Link onClick={() => signOut()} mr={4}>Log Out</Link>}
-                    <Avatar size="sm" src={auth?.user?.photoUrl} />
+            <Box sx={{ position: '-webkit-sticky', top: '0', }}>
+                <Flex
+                    backgroundColor="white"
+                    justifyContent="space-between"
+                    py={4}
+                    px={8}
+                >
+                    <Stack spacing={4} isInline align="center">
+                        <Icon name="logo" color="black" size="24px"/>
+                        <Link>Sites</Link>
+                        <Link>Feedback</Link>
+                    </Stack>
+                    <Flex justifyContent="flex-start" alignItems="center">
+                        {auth.user && <Link onClick={() => signOut()} mr={4}>Log Out</Link>}
+                        <Avatar size="sm" src={auth?.user?.photoUrl} />
+                    </Flex>
                 </Flex>
-            </Flex>
+            </Box>
             <Flex backgroundColor="blackAlpha.50" p={8} height="100vh">
                 <Flex
                     w="100%"
