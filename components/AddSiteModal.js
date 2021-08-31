@@ -5,20 +5,30 @@ import {
     ModalHeader,
     ModalFooter,
     ModalBody,
-    ModalCloseButton, Button, FormControl, FormLabel, Input, useDisclosure, Flex,
+    ModalCloseButton, Button, FormControl, FormLabel, Input, useDisclosure, Flex, useToast
 } from "@chakra-ui/core";
 import React from "react";
 import {useForm} from "react-hook-form";
 import {createSite} from "@/lib/db";
 
 
+
 const InitialFocus = () => {
     const { isOpen, onOpen, onClose } = useDisclosure();
     const { handleSubmit, register, errors } = useForm();
     const initialRef = React.useRef();
+    const toast = useToast();
 
     const onCreateSite = (values) => {
+
         createSite(values);
+        toast({
+            title: "Success!",
+            description: "We've created added your site.",
+            status: "success",
+            duration: 5000,
+            isClosable: true,
+        });
     }
 
     return (
