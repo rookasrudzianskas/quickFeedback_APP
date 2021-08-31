@@ -43,6 +43,12 @@ const InitialFocus = ({children}) => {
         });
 
         mutate('api/sites', { sites: [...data.sites, newSite] });
+
+        mutate('api/users', async users => {
+            const user = await fetcher('api/users/1');
+            return [user, ...users.slice(1)];
+        })
+
         onClose();
     }
 
