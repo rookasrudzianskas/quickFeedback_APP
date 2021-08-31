@@ -13,13 +13,19 @@ import {
     Text,
     Button
 } from '@chakra-ui/core';
+import {useAuth} from "@/lib/auth";
 
-const DashboardShell = ({children}) => (
+const DashboardShell = ({children}) => {
+
+    const auth = useAuth();
+
+    return  (
         <Flex flexDirection="column" height="100vh">
             <Flex
                 backgroundColor="white"
                 justifyContent="space-between"
-                p={4}
+                py={4}
+                px={8}
             >
                 <Stack spacing={4} isInline align="center">
                     <Icon name="logo" color="black" size="24px"/>
@@ -28,7 +34,7 @@ const DashboardShell = ({children}) => (
                 </Stack>
                 <Flex justifyContent="flex-start" alignItems="center">
                     <Link mr={4}>Account</Link>
-                    <Avatar size="sm" />
+                    <Avatar size="sm" src={auth?.user?.photoUrl} />
                 </Flex>
             </Flex>
             <Flex backgroundColor="blackAlpha.50" p={8} height="100vh">
@@ -49,7 +55,8 @@ const DashboardShell = ({children}) => (
                 </Flex>
             </Flex>
         </Flex>
-)
+    )
+}
 
 export default DashboardShell;
 
