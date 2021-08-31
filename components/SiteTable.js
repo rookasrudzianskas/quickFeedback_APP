@@ -27,7 +27,7 @@ const SiteTable = ({ sites }) => {
                         {site.url}
                     </Td>
                     <Td>
-                        <Link>View Feedback</Link>
+                        <Link color="teal.500">View Feedback</Link>
                     </Td>
                     <Td>
                         {format(parseISO(site.createdAt), 'PPpp')}
