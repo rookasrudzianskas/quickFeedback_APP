@@ -11,10 +11,9 @@ import React from "react";
 
 
 const InitialFocus = () => {
-    const { isOpen, onOpen, onClose } = useDisclosure()
+    const { isOpen, onOpen, onClose } = useDisclosure();
 
-    const initialRef = React.useRef()
-    const finalRef = React.useRef()
+    const initialRef = React.useRef();
 
     return (
         <>
@@ -22,37 +21,30 @@ const InitialFocus = () => {
                 Add Your First Site
             </Button>
 
-            {/*<Button ml={4} ref={finalRef}>*/}
-            {/*    I'll receive focus on close*/}
-            {/*</Button>*/}
-
             <Modal
                 initialFocusRef={initialRef}
-                finalFocusRef={finalRef}
                 isOpen={isOpen}
                 onClose={onClose}
             >
                 <ModalOverlay />
                 <ModalContent>
-                    <ModalHeader>Create your account</ModalHeader>
+                    <ModalHeader>Add Site</ModalHeader>
                     <ModalCloseButton />
                     <ModalBody pb={6}>
                         <FormControl>
-                            <FormLabel>First name</FormLabel>
-                            <Input ref={initialRef} placeholder="First name" />
+                            <FormLabel>Name</FormLabel>
+                            <Input ref={initialRef} placeholder="My site" />
                         </FormControl>
 
                         <FormControl mt={4}>
-                            <FormLabel>Last name</FormLabel>
-                            <Input placeholder="Last name" />
+                            <FormLabel>Link</FormLabel>
+                            <Input placeholder="https://byroookas.com" />
                         </FormControl>
                     </ModalBody>
 
                     <ModalFooter>
-                        <Button colorScheme="blue" mr={3}>
-                            Save
-                        </Button>
-                        <Button onClick={onClose}>Cancel</Button>
+                        <Button onClick={onClose} mr={3}>Save</Button>
+                        <Button variantColor="teal" >Create</Button>
                     </ModalFooter>
                 </ModalContent>
             </Modal>
