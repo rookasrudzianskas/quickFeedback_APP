@@ -33,7 +33,7 @@ const DashboardShell = ({children}) => {
                     <Link>Feedback</Link>
                 </Stack>
                 <Flex justifyContent="flex-start" alignItems="center">
-                    <Link mr={4}>Account</Link>
+                    {auth.user && <Link mr={4}>Account</Link>}
                     <Avatar size="sm" src={auth?.user?.photoUrl} />
                 </Flex>
             </Flex>
