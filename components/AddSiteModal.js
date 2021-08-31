@@ -42,11 +42,11 @@ const InitialFocus = ({children}) => {
             isClosable: true,
         });
 
-        mutate('api/sites', { sites: [...data.sites, newSite] });
+        // mutate('api/sites', { sites: [...data.sites, newSite] });
 
-        mutate('api/sites', async sites => {
-            const data = await fetcher('api/sites');
-            return [newSite, ...data.sites];
+        mutate('api/sites', async data => {
+            // const sites = await fetcher('api/sites');
+            return { sites: [...data.sites, newSite] };
         })
 
         onClose();
