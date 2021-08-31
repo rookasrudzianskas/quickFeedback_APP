@@ -22,20 +22,9 @@ const InitialFocus = () => {
 
     return (
         <>
-            {/*<Button*/}
-            {/*    id="add-site-modal-button"*/}
-            {/*    onClick={onOpen}*/}
-            {/*    backgroundColor="gray.900"*/}
-            {/*    color="white"*/}
-            {/*    fontWeight="medium"*/}
-            {/*    _hover={{ bg: 'gray.700' }}*/}
-            {/*    _active={{*/}
-            {/*        bg: 'gray.800',*/}
-            {/*        transform: 'scale(0.95)'*/}
-            {/*    }}*/}
-            {/*>*/}
-            {/*    {children}*/}
-            {/*</Button>*/}
+            <Button onClick={onOpen} fontWeight="medium" maxW="200px" variant="solid" size="md">
+                Add Your First Site
+            </Button>
             <Modal isOpen={isOpen} onClose={onClose}>
                 <ModalOverlay />
                 <ModalContent as="form" onSubmit={handleSubmit(onCreateSite)}>
