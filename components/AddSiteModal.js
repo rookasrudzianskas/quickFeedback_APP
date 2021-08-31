@@ -5,8 +5,9 @@ import {
     ModalHeader,
     ModalFooter,
     ModalBody,
-    ModalCloseButton, Button, FormControl, FormLabel, Input, useDisclosure,
+    ModalCloseButton, Button, FormControl, FormLabel, Input, useDisclosure, Flex,
 } from "@chakra-ui/core";
+import React from "react";
 
 
 const InitialFocus = () => {
@@ -17,10 +18,13 @@ const InitialFocus = () => {
 
     return (
         <>
-            <Button onClick={onOpen}>Open Modal</Button>
-            <Button ml={4} ref={finalRef}>
-                I'll receive focus on close
+            <Button onClick={onOpen} fontWeight="medium" maxW="200px" variant="solid" size="md">
+                Add Your First Site
             </Button>
+
+            {/*<Button ml={4} ref={finalRef}>*/}
+            {/*    I'll receive focus on close*/}
+            {/*</Button>*/}
 
             <Modal
                 initialFocusRef={initialRef}
