@@ -13,15 +13,13 @@ import fetcher from "../utils/fetcher";
 
 const Dashboard = () => {
     const { data, error } = useSWR('/api/sites', fetcher);
-
-    console.log("Data", data);
-
+    console.log(data);
     if(!data) {
-        return (
-            <DashboardShell>
-                <SiteTableSkeleton />
-            </DashboardShell>
-        )
+        // return (
+        //     <DashboardShell>
+        //         <SiteTableSkeleton />
+        //     </DashboardShell>
+        // )
     }
 
     const auth = useAuth();
