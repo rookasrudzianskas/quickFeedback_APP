@@ -26,6 +26,7 @@ const InitialFocus = () => {
             title: "Success!",
             description: "We've created added your site.",
             status: "success",
+            position: "top-right",
             duration: 5000,
             isClosable: true,
         });
