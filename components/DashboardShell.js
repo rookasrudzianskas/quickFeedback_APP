@@ -24,7 +24,7 @@ const DashboardShell = ({children}) => {
     }
 
     return  (
-        <Flex flexDirection="column" height="100vh">
+        <Flex flexDirection="column" height="100%">
             <Box sx={{ position: '-webkit-sticky', top: '0', }}>
                 <Flex
                     backgroundColor="white"
@@ -43,7 +43,7 @@ const DashboardShell = ({children}) => {
                     </Flex>
                 </Flex>
             </Box>
-            <Flex backgroundColor="blackAlpha.50" p={8} height="100vh">
+            <Flex backgroundColor="blackAlpha.50" p={8}  height="100%">
                 <Flex
                     w="100%"
                     ml="auto"
