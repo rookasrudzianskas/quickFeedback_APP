@@ -44,10 +44,10 @@ const InitialFocus = ({children}) => {
 
         // mutate('api/sites', { sites: [...data.sites, newSite] });
 
-        mutate('api/sites', async data => {
+        mutate('api/sites', async (data) => {
             // const sites = await fetcher('api/sites');
             return { sites: [...data.sites, newSite] };
-        })
+        }, false);
 
         onClose();
     }
