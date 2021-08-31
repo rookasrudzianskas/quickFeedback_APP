@@ -47,7 +47,7 @@ const DashboardShell = ({children}) => {
                     <Breadcrumb />
                         <Breadcrumb>
                             <BreadcrumbItem isCurrentPage>
-                                <BreadcrumbLink>Sites/</BreadcrumbLink>
+                                <BreadcrumbLink color="gray.700" fontSize="sm">Sites/</BreadcrumbLink>
                             </BreadcrumbItem>
                         </Breadcrumb>
                         <Heading mb={4}>My Sites</Heading>
