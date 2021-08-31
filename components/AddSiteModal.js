@@ -21,12 +21,13 @@ const InitialFocus = () => {
     const toast = useToast();
     const auth = useAuth();
 
-    const onCreateSite = (values) => {
+    const onCreateSite = ({name, url}) => {
 
         createSite({
             authorId: auth.user.uid,
             createdAt: new Date().toISOString(),
-            ...values,
+            name,
+            url,
         });
         toast({
             title: "Success!",
