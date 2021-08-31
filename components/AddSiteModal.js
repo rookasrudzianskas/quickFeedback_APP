@@ -36,12 +36,21 @@ const InitialFocus = () => {
                     <ModalBody pb={6}>
                         <FormControl>
                             <FormLabel>Name</FormLabel>
-                            <Input ref={initialRef} placeholder="My site" name="site" ref={register({required: "Required"})} />
+                            <Input
+                                ref={initialRef}
+                                placeholder="My site"
+                                name="site"
+                                register={register} required
+                            />
                         </FormControl>
 
                         <FormControl mt={4}>
                             <FormLabel>Link</FormLabel>
-                            <Input placeholder="https://byroookas.com" name="url" ref={register({required: "Required"})} />
+                            <Input
+                                placeholder="https://byroookas.com"
+                                name="url"
+                                register={register} required
+                            />
                         </FormControl>
                     </ModalBody>
 
