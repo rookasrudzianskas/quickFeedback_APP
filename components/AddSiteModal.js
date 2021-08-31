@@ -14,7 +14,7 @@ import {createSite} from "@/lib/db";
 
 const InitialFocus = () => {
     const { isOpen, onOpen, onClose } = useDisclosure();
-    const { handleSubmit, register, errors } = useForm();
+    const { handleSubmit, register } = useForm();
     const initialRef = React.useRef();
 
     const onCreateSite = (values) => {
