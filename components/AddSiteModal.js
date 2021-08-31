@@ -26,9 +26,9 @@ const InitialFocus = () => {
             <Button onClick={onOpen} fontWeight="medium" maxW="200px" variant="solid" size="md">
                 Add Your First Site
             </Button>
-            <Modal isOpen={isOpen} onClose={onClose}>
+            <Modal rounded="md" isOpen={isOpen} onClose={onClose}>
                 <ModalOverlay />
-                <ModalContent as="form" onSubmit={handleSubmit(onCreateSite)}>
+                <ModalContent rounded="md" as="form" onSubmit={handleSubmit(onCreateSite)}>
                     <ModalHeader fontWeight="bold">Add Site</ModalHeader>
                     <ModalCloseButton />
                     <ModalBody pb={6}>
