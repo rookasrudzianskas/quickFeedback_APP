@@ -52,7 +52,7 @@ const InitialFocus = () => {
                             <Input
                                 placeholder="https://byroookas.com"
                                 name="url"
-                                {...register("link")}
+                                {...register("url")}
                             />
                         </FormControl>
                     </ModalBody>
