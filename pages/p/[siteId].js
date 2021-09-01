@@ -5,6 +5,7 @@ import {Box, Button, FormControl, FormHelperText, FormLabel, Input} from "@chakr
 import {useAuth} from "@/lib/auth";
 import {useRouter} from "next/router";
 import {useRef} from "react";
+import {createFeedback} from "@/lib/db";
 
 const SiteFeedback = ({ initialFeedback }) => {
 
