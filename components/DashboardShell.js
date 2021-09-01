@@ -15,12 +15,19 @@ import {
 } from '@chakra-ui/core';
 import {useAuth} from "@/lib/auth";
 import AddSiteModal from "@/components/AddSiteModal";
+import {useRouter} from "next/router";
 
 const DashboardShell = ({children}) => {
 
     const auth = useAuth();
     const signOut = () => {
+    }
+
+    const router = useRouter();
+    const signOutFromApp = () => {
         auth.signout();
+        router.push('/');
+
     }
 
     return  (
@@ -39,7 +46,7 @@ const DashboardShell = ({children}) => {
                         <Link>Feedback</Link>
                     </Stack>
                     <Flex justifyContent="flex-start" alignItems="center">
-                        {auth.user && <Link onClick={() => signOut()} mr={4}>Log Out</Link>}
+                        {auth.user && <Link onClick={signOutFromApp} mr={4}>Log Out</Link>}
                         <Avatar size="sm" src={auth?.user?.photoUrl} />
                     </Flex>
                 </Flex>

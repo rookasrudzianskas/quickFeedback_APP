@@ -1,6 +1,7 @@
 import { Box, Button, Flex, Text, Icon, Link, Stack, Heading, Code } from '@chakra-ui/core';
 import Head from "next/head";
 import {useAuth} from "@/lib/auth";
+import {useRouter} from "next/router";
 
 
 // import {useAuth} from "@/lib/auth";
@@ -8,6 +9,7 @@ import {useAuth} from "@/lib/auth";
 export default function Home() {
 
     const auth = useAuth();
+    const router = useRouter();
 
   return (
       <Flex as="main" direction="column" align="center" justify="center" h="100vh">
@@ -20,7 +22,7 @@ export default function Home() {
 
 
           {auth.user ? (
-              <Button mt={6} onClick={(e) => auth.signout()}>Sign Out</Button>
+              <Button mt={6} onClick={router.push('/dashboard')}>View Dashboard</Button>
           ) : (
               <Button mt={6} varian="link" size="sm" onClick={(e) => auth.signinWithGithub()}>Sign In</Button>
           )}

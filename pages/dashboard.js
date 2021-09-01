@@ -39,7 +39,7 @@ const Dashboard = () => {
             </Head>
 
             <DashboardShell overflow="hidden">
-                {data.sites ? <SiteTable sites={data.sites} /> : <EmptyState />}
+                {data?.sites ? <SiteTable sites={data.sites} /> : <EmptyState />}
             </DashboardShell>
 
         </>
