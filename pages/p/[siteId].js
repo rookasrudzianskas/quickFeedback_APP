@@ -7,6 +7,7 @@ const SiteFeedback = ({ initialFeedback }) => {
     return (
             <Box
                 display="flex"
+                alignItems="center"
                 flexDirection="column"
                 width="full"
                 maxWidth="1000px"
