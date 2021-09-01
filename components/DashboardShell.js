@@ -50,7 +50,7 @@ const DashboardShell = ({children}) => {
                     ml="auto"
                     mr="auto"
                     direction="column"
-                    maxWidth="800px">
+                    maxWidth="1200px">
                     <Breadcrumb />
                         <Breadcrumb>
                             <BreadcrumbItem isCurrentPage>
