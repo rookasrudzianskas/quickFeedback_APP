@@ -12,9 +12,9 @@ const SiteFeedback = ({ initialFeedback }) => {
                 maxWidth="1000px"
                 margin="0 auto"
             >
-                 initialFeedback.map((feedback) => (
+                {initialFeedback.map((feedback) => (
                         <Feedback key={feedback.id} {...feedback} />
-                ))
+                ))}
             </Box>
     )
 }
