@@ -18,7 +18,7 @@ const SiteFeedback = ({ initialFeedback }) => {
                     <FormControl my={8} id="comment">
                         <FormLabel>Comment</FormLabel>
                         <Input type="comment" id="comment" />
-                        <Button>
+                        <Button fontWeight="medium" type="submit" mt={2}>
                             Add Comment
                         </Button>
                     </FormControl>
