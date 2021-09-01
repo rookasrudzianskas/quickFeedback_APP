@@ -1,21 +1,33 @@
 import {getAllFeedback, getAllSites} from "@/lib/db-admin";
 import FeedbackLink from "@/components/FeedbackLink";
 import Feedback from "@/components/Feedback";
-import {Box} from "@chakra-ui/core";
+import {Box, FormControl, FormHelperText, FormLabel, Input} from "@chakra-ui/core";
 
 const SiteFeedback = ({ initialFeedback }) => {
     return (
             <Box
                 display="flex"
-                alignItems="center"
+                // alignItems="center"
                 flexDirection="column"
                 width="full"
-                maxWidth="1000px"
+                maxWidth="700px"
                 margin="0 auto"
             >
+
+                <Box>
+                    <FormControl my={8} id="comment">
+                        <FormLabel>Comment</FormLabel>
+                        <Input type="comment" id="comment" />
+                    </FormControl>
+                </Box>
+
+                <Box
+                    alignItems="center"
+                >
                 {initialFeedback.map((feedback) => (
                         <Feedback key={feedback.id} {...feedback} />
                 ))}
+                </Box>
             </Box>
     )
 };
