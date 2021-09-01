@@ -1,12 +1,21 @@
 import {getAllFeedback, getAllSites} from "@/lib/db-admin";
 import FeedbackLink from "@/components/FeedbackLink";
 import Feedback from "@/components/Feedback";
+import {Box} from "@chakra-ui/core";
 
 const SiteFeedback = ({ initialFeedback }) => {
     return (
-         initialFeedback.map(feedback => (
-            <Feedback key={feedback.id} {...feedback} />
-        ))
+            <Box
+                display="flex"
+                flexDirection="column"
+                width="full"
+                maxWidth="1000px"
+                margin="0 auto"
+            >
+                 initialFeedback.map((feedback) => (
+                        <Feedback key={feedback.id} {...feedback} />
+                ))
+            </Box>
     )
 }
 
