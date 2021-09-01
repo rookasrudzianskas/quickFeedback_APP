@@ -4,7 +4,7 @@ import Feedback from "@/components/Feedback";
 import {Box, Button, FormControl, FormHelperText, FormLabel, Input} from "@chakra-ui/core";
 import {useAuth} from "@/lib/auth";
 import {useRouter} from "next/router";
-import {useRef} from "react";
+import {useRef, useState} from "react";
 import {createFeedback} from "@/lib/db";
 
 const SiteFeedback = ({ initialFeedback }) => {
@@ -12,6 +12,7 @@ const SiteFeedback = ({ initialFeedback }) => {
     const auth = useAuth();
     const router = useRouter();
     const inputEl = useRef(null);
+    const [allFeedback, setAllFeedback] = useState(initialFeedback);
 
     const onSubmit = (e) => {
         e.preventDefault();
@@ -26,8 +27,12 @@ const SiteFeedback = ({ initialFeedback }) => {
             status: 'pending',
         };
 
+        setAllFeedback([newFeedback, ...allFeedback]);
+
         createFeedback(newFeedback);
     }
+
+    console.log(allFeedback);
 
     return (
             <Box
@@ -49,8 +54,8 @@ const SiteFeedback = ({ initialFeedback }) => {
                     </FormControl>
                 </Box>
 
-                {initialFeedback.map((feedback) => (
-                        <Feedback key={feedback.id} {...feedback} />
+                {allFeedback.map((feedback) => (
+                        <Feedback key={feedback.createdAt} {...feedback} />
                 ))}
             </Box>
     )
