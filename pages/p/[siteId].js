@@ -17,7 +17,7 @@ const SiteFeedback = ({ initialFeedback }) => {
                 ))}
             </Box>
     )
-}
+};
 
 export async function getStaticProps(context) {
 
