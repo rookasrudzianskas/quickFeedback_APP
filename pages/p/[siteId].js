@@ -24,7 +24,7 @@ export async function getStaticPaths() {
     return {
         paths : [
             { params: {
-                    siteId: 'CHpFwbzUUuNhCZHHbxX1'
+                    siteId:
                 }
             }
         ],
