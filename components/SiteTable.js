@@ -2,6 +2,7 @@ import React from 'react';
 import {Box, Link, Skeleton} from '@chakra-ui/core';
 import { Table, Tr, Th, Td } from './Table';
 import {format, parseISO} from "date-fns";
+import NextLink from 'next/link'
 
 
 const SiteTable = ({ sites }) => {
@@ -27,7 +28,9 @@ const SiteTable = ({ sites }) => {
                         {site.url}
                     </Td>
                     <Td>
-                        <Link color="teal.500">View Feedback</Link>
+                        <NextLink>
+                            <Link color="teal.500">View Feedback</Link>
+                        </NextLink>
                     </Td>
                     <Td>
                         {format(parseISO(site.createdAt), 'PPpp')}
