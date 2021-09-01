@@ -23,7 +23,9 @@ const SiteFeedback = ({ initialFeedback }) => {
             createdAt: new Date().toISOString(),
             provider: auth.user.provider,
             status: 'pending',
-        }
+        };
+
+        createFeedback(newFeedback);
     }
 
     return (
