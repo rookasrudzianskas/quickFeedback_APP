@@ -2,11 +2,28 @@ import {getAllFeedback, getAllSites} from "@/lib/db-admin";
 import FeedbackLink from "@/components/FeedbackLink";
 import Feedback from "@/components/Feedback";
 import {Box, Button, FormControl, FormHelperText, FormLabel, Input} from "@chakra-ui/core";
+import {useAuth} from "@/lib/auth";
+import {useRouter} from "next/router";
+import {useRef} from "react";
 
 const SiteFeedback = ({ initialFeedback }) => {
 
-    const onSubmit = () => {
-        console.log('Hello');
+    const auth = useAuth();
+    const router = useRouter();
+    const inputEl = useRef(null);
+
+    const onSubmit = (e) => {
+        e.preventDefault();
+        // console.log('Hello');
+        const newFeedback = {
+            author: auth.user.name,
+            authorId: auth.user.uid,
+            siteId: router.query.siteId,
+            text: inputEl.current.value,
+            createdAt: new Date().toISOString(),
+            provider: auth.user.provider,
+            status: 'pending',
+        }
     }
 
     return (
@@ -22,7 +39,7 @@ const SiteFeedback = ({ initialFeedback }) => {
                 <Box as="form" onSubmit={onSubmit}>
                     <FormControl my={8} id="comment">
                         <FormLabel>Comment</FormLabel>
-                        <Input type="comment" id="comment" />
+                        <Input ref={inputEl} type="comment" id="comment" />
                         <Button fontWeight="medium" type="submit" mt={2}>
                             Add Comment
                         </Button>
