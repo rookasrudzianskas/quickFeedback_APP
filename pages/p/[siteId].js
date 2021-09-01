@@ -13,6 +13,10 @@ const SiteFeedback = ({ initialFeedback }) => {
     const router = useRouter();
     const inputEl = useRef(null);
     const [allFeedback, setAllFeedback] = useState(initialFeedback);
+    const [value, setValue] = useState("");
+    const handleChange = (event) => setValue(event.target.value)
+
+
 
     const onSubmit = (e) => {
         e.preventDefault();
@@ -28,7 +32,7 @@ const SiteFeedback = ({ initialFeedback }) => {
         };
 
         setAllFeedback([newFeedback, ...allFeedback]);
-
+        setValue("");
         createFeedback(newFeedback);
     }
 
@@ -47,7 +51,7 @@ const SiteFeedback = ({ initialFeedback }) => {
                 <Box as="form" onSubmit={onSubmit}>
                     <FormControl my={8} id="comment">
                         <FormLabel>Comment</FormLabel>
-                        <Input ref={inputEl} type="comment" id="comment" />
+                        <Input  value={value} onChange={handleChange} ref={inputEl} type="comment" id="comment" />
                         <Button fontWeight="medium" type="submit" mt={2}>
                             Add Comment
                         </Button>
