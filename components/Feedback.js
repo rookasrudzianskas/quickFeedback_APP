@@ -12,8 +12,8 @@ const Feedback = ({ author, text, createdAt }) => {
             <Text color="gray.500" mb={4} fontSize="xs">
                 {format(parseISO(createdAt), 'PPpp')}
             </Text>
-            <Text color="gray.800">{text}</Text>
-            <Divider borderColor="gray.200" backgroundColor="white" />
+            <Text color="gray.800"   mb={6}>{text}</Text>
+            <Divider borderColor="gray.200" backgroundColor="white" mb={6}/>
         </Box>
     );
 };
