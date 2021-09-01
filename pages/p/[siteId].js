@@ -1,4 +1,4 @@
-import {getAllFeedback} from "@/lib/db-admin";
+import {getAllFeedback, getAllSites} from "@/lib/db-admin";
 
 const SiteFeedback = ({ initialFeedback }) => {
     return (
@@ -21,13 +21,15 @@ export async function getStaticProps(context) {
 }
 
 export async function getStaticPaths() {
+    const sites = await getAllSites();
+    const paths = sites.map(site => ({
+        params: {
+            siteId: site.id.toString(),
+        }
+    }));
+
     return {
-        paths : [
-            { params: {
-                    siteId:
-                }
-            }
-        ],
+        paths,
         fallback: false
     };
 }
