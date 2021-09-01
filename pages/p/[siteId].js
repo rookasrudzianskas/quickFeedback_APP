@@ -1,3 +1,12 @@
+
+const SiteFeedback = () => {
+    return (
+        'Hello world'
+    )
+}
+
+export default SiteFeedback;
+
 export async function getStaticProps(context) {
     return {
         props: {
@@ -17,13 +26,4 @@ export async function getStaticPaths() {
         fallback: false
     };
 }
-
-const SiteFeedback = () => {
-    return (
-        'Hello world'
-    )
-}
-
-export default SiteFeedback;
-
 
