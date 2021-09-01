@@ -12,3 +12,5 @@ const FeedbackLink = ({siteId}) => {
         </Flex>
     )
 }
+
+export default FeedbackLink;
