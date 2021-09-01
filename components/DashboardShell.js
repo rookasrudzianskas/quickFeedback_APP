@@ -44,7 +44,7 @@ const DashboardShell = ({children}) => {
                     </Flex>
                 </Flex>
             </Box>
-            <Flex backgroundColor="blackAlpha.50" p={8} height="100vh">
+            <Flex backgroundColor="blackAlpha.50" p={8} height="93vh">
                 <Flex
                     w="100%"
                     ml="auto"
