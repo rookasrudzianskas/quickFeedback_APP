@@ -17,6 +17,20 @@ export default SiteFeedback;
 
 export async function getStaticProps(context) {
     return {
-        props: {}, // will be passed to the page component as props
-    }
+        props: {
+            initialFeedback: []
+        }
+    };
+}
+
+export async function getStaticPaths() {
+    return {
+        paths : [
+            { params: {
+                siteId: 'CHpFwbzUUuNhCZHHbxX1'
+            }
+          }
+        ],
+        fallback: false
+    };
 }
