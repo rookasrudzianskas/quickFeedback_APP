@@ -1,10 +1,11 @@
 import {getAllFeedback, getAllSites} from "@/lib/db-admin";
 import FeedbackLink from "@/components/FeedbackLink";
+import Feedback from "@/components/Feedback";
 
 const SiteFeedback = ({ initialFeedback }) => {
     return (
          initialFeedback.map(feedback => (
-            <FeedbackLink key={feedback.id} {...feedback} />
+            <Feedback key={feedback.id} {...feedback} />
         ))
     )
 }
