@@ -24,7 +24,7 @@ const DashboardShell = ({children}) => {
     }
 
     return  (
-        <Flex flexDirection="column" height="100%">
+        <Flex flexDirection="column" overflow="hidden">
             <Box as='header' sx={{ position: '-webkit-sticky', /* Safari */ top: '0', }}>
 
             <Flex
@@ -44,7 +44,7 @@ const DashboardShell = ({children}) => {
                     </Flex>
                 </Flex>
             </Box>
-            <Flex backgroundColor="blackAlpha.50" p={8}  height="100%">
+            <Flex backgroundColor="blackAlpha.50" p={8} height="100%">
                 <Flex
                     w="100%"
                     ml="auto"
@@ -57,7 +57,7 @@ const DashboardShell = ({children}) => {
                                 <BreadcrumbLink color="gray.700" fontSize="sm">Sites/</BreadcrumbLink>
                             </BreadcrumbItem>
                         </Breadcrumb>
-                    <Flex>
+                    <Flex >
                         <Heading flexGrow="1" mb={4}>My Sites</Heading>
                         <AddSiteModal>
                             + Add Site

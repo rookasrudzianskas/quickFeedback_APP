@@ -38,7 +38,7 @@ const Dashboard = () => {
                 <title>Dashboard</title>
             </Head>
 
-            <DashboardShell>
+            <DashboardShell overflow="hidden">
                 {data.sites ? <SiteTable sites={data.sites} /> : <EmptyState />}
             </DashboardShell>
 
