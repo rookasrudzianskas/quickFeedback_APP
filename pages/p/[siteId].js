@@ -1,7 +1,7 @@
 import {getAllFeedback, getAllSites} from "@/lib/db-admin";
 import FeedbackLink from "@/components/FeedbackLink";
 import Feedback from "@/components/Feedback";
-import {Box, FormControl, FormHelperText, FormLabel, Input} from "@chakra-ui/core";
+import {Box, Button, FormControl, FormHelperText, FormLabel, Input} from "@chakra-ui/core";
 
 const SiteFeedback = ({ initialFeedback }) => {
     return (
@@ -18,16 +18,15 @@ const SiteFeedback = ({ initialFeedback }) => {
                     <FormControl my={8} id="comment">
                         <FormLabel>Comment</FormLabel>
                         <Input type="comment" id="comment" />
+                        <Button>
+                            Add Comment
+                        </Button>
                     </FormControl>
                 </Box>
 
-                <Box
-                    alignItems="center"
-                >
                 {initialFeedback.map((feedback) => (
                         <Feedback key={feedback.id} {...feedback} />
                 ))}
-                </Box>
             </Box>
     )
 };
