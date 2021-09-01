@@ -4,6 +4,11 @@ import Feedback from "@/components/Feedback";
 import {Box, Button, FormControl, FormHelperText, FormLabel, Input} from "@chakra-ui/core";
 
 const SiteFeedback = ({ initialFeedback }) => {
+
+    const onSubmit = () => {
+        console.log('Hello');
+    }
+
     return (
             <Box
                 display="flex"
@@ -14,7 +19,7 @@ const SiteFeedback = ({ initialFeedback }) => {
                 margin="0 auto"
             >
 
-                <Box>
+                <Box as="form" onSubmit={onSubmit}>
                     <FormControl my={8} id="comment">
                         <FormLabel>Comment</FormLabel>
                         <Input type="comment" id="comment" />
