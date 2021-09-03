@@ -17,11 +17,11 @@ const Dashboard = () => {
     const { data, error } = useSWR(user ? ['/api/sites', user.token] : null, fetcher);
     console.log(data);
     if(!data) {
-        return (
-            <DashboardShell>
-                <SiteTableSkeleton />
-            </DashboardShell>
-        )
+        // return (
+        //     <DashboardShell>
+        //         <SiteTableSkeleton />
+        //     </DashboardShell>
+        // )
     }
 
     if(!user) {
