@@ -1,6 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 
-import {getAllSites} from "@/lib/db-admin";
+import {getAllSites, getUserSites} from "@/lib/db-admin";
 import {auth} from "@/lib/firebase-admin";
 
 export default async function handler(req, res) {
@@ -9,7 +9,7 @@ export default async function handler(req, res) {
     try {
         const { uid } = await auth.verifyIdToken(req.headers.token);
         // console.log("This is user something", user);
-        const sites = await  getAllSites();
+        const sites = await  getUserSites();
 
         res.status(200).json({sites});
 
