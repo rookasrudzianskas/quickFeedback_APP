@@ -24,7 +24,7 @@ const Dashboard = () => {
         // )
     }
 
-    if(!auth.user) {
+    if(!user) {
         return (
             <DashboardShell>
                 <SiteTableSkeleton />
