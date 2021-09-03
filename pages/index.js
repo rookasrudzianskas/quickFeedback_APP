@@ -15,10 +15,10 @@ export default function Home() {
       <Flex as="main" direction="column" align="center" justify="center" h="100vh">
         <Head>
             <script dangerouslySetInnerHTML={{ __html: `
-          if (document.cookie && document.cookie.includes('authed')) {
-            window.location.href = "/dashboard"
-          }
-        ` }} />
+                  if (document.cookie && document.cookie.includes('quick-feedback-auth')) {
+                    window.location.href = "/dashboard"
+                  }
+                ` }} />
             <title>QuickFeedback app</title>
         </Head>
 
