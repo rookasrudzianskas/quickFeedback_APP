@@ -9,7 +9,7 @@ export default async function handler(req, res) {
     try {
         const { uid } = await auth.verifyIdToken(req.headers.token);
         // console.log("This is user something", user);
-        const { sites, error } = await  getAllSites();
+        const sites = await  getAllSites();
 
         res.status(200).json({sites});
 
