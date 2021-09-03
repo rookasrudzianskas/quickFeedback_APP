@@ -14,7 +14,12 @@ export default function Home() {
   return (
       <Flex as="main" direction="column" align="center" justify="center" h="100vh">
         <Head>
-            <title>Something cool</title>
+            <script dangerouslySetInnerHTML={{ __html: `
+          if (document.cookie && document.cookie.includes('authed')) {
+            window.location.href = "/dashboard"
+          }
+        ` }} />
+            <title>QuickFeedback app</title>
         </Head>
 
           <Flex direction="column" w="30vw" align="center">
