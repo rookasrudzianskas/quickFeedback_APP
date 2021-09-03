@@ -17,6 +17,7 @@ export default function Home() {
             <title>Something cool</title>
         </Head>
 
+          <Flex direction="column" w="30vw" align="center">
             <Icon name="logo" color="black" size="64px" />
           <Text noOfLines={2} fontSize="5xl">Quick Feedback</Text>
             <Text>
@@ -29,6 +30,7 @@ export default function Home() {
           ) : (
               <Button mt={6} varian="link" size="sm" onClick={(e) => auth.signinWithGithub()}>Sign In</Button>
           )}
+          </Flex>
       </Flex>
   )
 }
