@@ -3,7 +3,9 @@
 import {db} from "@/lib/firebase";
 import {getAllSites} from "@/lib/db-admin";
 
-export default async function handler(_, res) {
+export default async function handler(req, res) {
+    // console.log(req.headers);
+    const token = req.headers.token;
     const { sites, error } = await  getAllSites();
 
     if(error) {
