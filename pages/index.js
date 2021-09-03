@@ -26,7 +26,7 @@ export default function Home() {
             </Text>
 
           {auth.user ? (
-              <Button mt={6} onClick={router.push('/dashboard')}>View Dashboard</Button>
+              <Button mt={6}>View Dashboard</Button>
           ) : (
               <Button mt={6} varian="link" size="sm" onClick={(e) => auth.signinWithGithub()}>Sign In</Button>
           )}
