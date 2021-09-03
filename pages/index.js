@@ -19,7 +19,10 @@ export default function Home() {
 
             <Icon name="logo" color="black" size="64px" />
           <Text noOfLines={2} fontSize="5xl">Quick Feedback</Text>
-
+            <Text>
+                It's the easiest way to add comments or reviews to your static site.
+                It's still a work-in-progress, but you can try it out by logging in.
+            </Text>
 
           {auth.user ? (
               <Button mt={6} onClick={router.push('/dashboard')}>View Dashboard</Button>
