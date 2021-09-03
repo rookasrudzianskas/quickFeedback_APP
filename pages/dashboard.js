@@ -14,7 +14,7 @@ import SiteTable from "@/components/SiteTable";
 
 const Dashboard = () => {
     const { user } = useAuth();
-    const { data, error } = useSWR(user ? ['/api/sites', user.token], fetcher);
+    const { data, error } = useSWR(user ? ['/api/sites', user.token] : null, fetcher);
     console.log(data);
     if(!data) {
         // return (
