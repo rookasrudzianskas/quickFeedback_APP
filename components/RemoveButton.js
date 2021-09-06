@@ -8,14 +8,26 @@ import {
 } from "@chakra-ui/core";
 import {useRef, useState} from "react";
 import {deleteFeedback} from "@/lib/db";
+import {mutate} from "swr";
+import {useAuth} from "@/lib/auth";
 
 
 function RemoveButton({feedbackId}) {
     const [isOpen, setIsOpen] = useState(false)
     const onClose = () => setIsOpen(false);
+    const auth = useAuth();
     const onDelete = () => {
         // console.log(feedbackId);
         deleteFeedback(feedbackId);
+
+        mutate(
+            ['/api/feedback', auth.user.token],
+            async (data) => {
+                return { feedback: data.feedback.filter((feedback) => feedback.id === feedbackId) };
+            },
+            false
+        );
+
         onClose();
     }
     const cancelRef = useRef()
