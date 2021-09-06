@@ -1,5 +1,5 @@
 import React from 'react';
-import {Box, Code, Link, Skeleton} from '@chakra-ui/core';
+import {Box, Code, IconButton, Link, Skeleton, Switch} from '@chakra-ui/core';
 import { Table, Tr, Th, Td } from './Table';
 
 
@@ -31,10 +31,10 @@ const FeedbackTable = ({ allFeedback }) => {
                         <Code>{'/'}</Code>
                     </Td>
                     <Td>
-                        {'Visible'}
+                        <Switch size="md" defaultIsChecked={feedback.status === 'active'} />
                     </Td>
                     <Td>
-                        {'Remove'}
+                        <IconButton aria-label="Delete Feedback" icon="delete" variant="ghost" />
                     </Td>
                 </Box>
             ))}
