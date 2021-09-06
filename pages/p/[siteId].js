@@ -94,4 +94,4 @@ export async function getStaticPaths() {
 
 export default SiteFeedback;
 
-// today's shit done
+// today's shit done and checks
