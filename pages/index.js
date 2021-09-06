@@ -2,8 +2,10 @@ import { Box, Button, Flex, Text, Icon, Link, Stack, Heading, Code } from '@chak
 import Head from "next/head";
 import {useAuth} from "@/lib/auth";
 import {useRouter} from "next/router";
-import {getAllFeedback} from "@/lib/db-admin";
+import {getAllFeedback, getSite} from "@/lib/db-admin";
 import LoginButtons from "@/components/LoginButtons";
+import FeedbackLink from "@/components/FeedbackLink";
+import Feedback from "./feedback";
 
 
 // import {useAuth} from "@/lib/auth";
@@ -13,17 +15,18 @@ const SITE_ID = '8m2dLXIOiEbH5W3L1JkL';
 
 export async function getStaticProps(context) {
     const { feedback } = await getAllFeedback(SITE_ID);
-    // const { site } = await getSite(SITE_ID);
+    const { site } = await getSite(SITE_ID);
 
     return {
         props: {
             allFeedback: feedback,
+            site,
         },
         revalidate: 1
     };
 }
 
-export default function Home() {
+export default function Home({ allFeedback, site }) {
 
     const auth = useAuth();
     const router = useRouter();
@@ -56,6 +59,7 @@ export default function Home() {
                   {auth.user ? (
                       <Button
                           as="a"
+                          onClick={GoToDashboard}
                           href="/sites"
                           backgroundColor="gray.900"
                           color="white"
@@ -84,15 +88,15 @@ export default function Home() {
               mt={8}
               px={4}
           >
-              {/*<FeedbackLink paths={[SITE_ID]} />*/}
-              {/*{allFeedback.map((feedback, index) => (*/}
-              {/*    <Feedback*/}
-              {/*        key={feedback.id}*/}
-              {/*        settings={site?.settings}*/}
-              {/*        isLast={index === allFeedback.length - 1}*/}
-              {/*        {...feedback}*/}
-              {/*    />*/}
-              {/*))}*/}
+              <FeedbackLink paths={[SITE_ID]} />
+              {allFeedback.map((feedback, index) => (
+                  <Feedback
+                      key={feedback.id}
+                      settings={site?.settings}
+                      isLast={index === allFeedback.length - 1}
+                      {...feedback}
+                  />
+              ))}
           </Box>
           {/*<Footer />*/}
       </>
