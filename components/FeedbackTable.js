@@ -1,11 +1,9 @@
 import React from 'react';
-import {Box, Link, Skeleton} from '@chakra-ui/core';
+import {Box, Code, Link, Skeleton} from '@chakra-ui/core';
 import { Table, Tr, Th, Td } from './Table';
-import {format, parseISO} from "date-fns";
-import NextLink from 'next/link'
 
 
-const FeedbackTable = ({ sites }) => {
+const FeedbackTable = ({ allFeedback }) => {
     return (
         <Table>
             <thead>
@@ -18,22 +16,20 @@ const FeedbackTable = ({ sites }) => {
             </Tr>
             </thead>
             <tbody>
-            {sites.map(site => (
+            {allFeedback.map((feedback) => (
 
-                <Box key={site.id} as="tr">
+                <Box key={feedback.id} as="tr">
                     <Td fontWeight="medium">
-                        {site.name}
+                        {feedback.name}
                     </Td>
                     <Td>
-                        {site.url}
+                        {feedback.text}
                     </Td>
                     <Td>
-                        <NextLink href="/p/[siteId]" as={`/p/${site.id}`} passHref>
-                            <Link color="teal.500">View Feedback</Link>
-                        </NextLink>
+                        <Code>{'/'}</Code>
                     </Td>
                     <Td>
-                        {format(parseISO(site.createdAt), 'PPpp')}
+                        {'Remove'}
                     </Td>
                 </Box>
             ))}

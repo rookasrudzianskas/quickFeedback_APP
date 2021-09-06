@@ -39,7 +39,7 @@ const Feedback = () => {
             </Head>
 
             <DashboardShell overflow="hidden">
-                {data?.feedback ? <FeedbackTable feedback={data.feedback} /> : <EmptyState />}
+                {data?.feedback ? <FeedbackTable allFeedback={data.feedback} /> : <EmptyState />}
             </DashboardShell>
 
         </>
