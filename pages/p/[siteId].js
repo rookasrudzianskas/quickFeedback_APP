@@ -36,7 +36,7 @@ const SiteFeedback = ({ initialFeedback }) => {
         createFeedback(newFeedback);
     }
 
-    // console.log(allFeedback);
+    console.log(allFeedback);
 
     return (
             <Box
