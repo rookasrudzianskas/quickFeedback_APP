@@ -1,7 +1,6 @@
 import React from 'react'
 import {
     Flex,
-    Link,
     Stack,
     Icon,
     Avatar,
@@ -11,8 +10,10 @@ import {
     BreadcrumbLink,
     Box,
     Text,
-    Button
+    Button, Link
 } from '@chakra-ui/core';
+import NextLink from 'next/link'
+
 import {useAuth} from "@/lib/auth";
 import AddSiteModal from "@/components/AddSiteModal";
 import {useRouter} from "next/router";
@@ -42,8 +43,13 @@ const DashboardShell = ({children}) => {
                 >
                     <Stack spacing={4} isInline align="center">
                         <Icon name="logo" color="black" size="24px"/>
-                        <Link>Sites</Link>
-                        <Link>Feedback</Link>
+                        <NextLink href={'/dashboard'} passHref>
+                            <Link>Sites</Link>
+                            </NextLink>
+
+                        <NextLink href={'/feedback'} passHref>
+                            <Link ml={4}>Feedback</Link>
+                        </NextLink>
                     </Stack>
                     <Flex justifyContent="flex-start" alignItems="center">
                         {auth.user && <Link onClick={signOutFromApp} mr={4}>Log Out</Link>}
