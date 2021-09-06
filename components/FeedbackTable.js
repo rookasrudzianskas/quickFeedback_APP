@@ -11,9 +11,9 @@ const FeedbackTable = ({ sites }) => {
             <thead>
             <Tr>
                 <Th>Name</Th>
-                <Th>Site Link</Th>
-                <Th>Feedback Link</Th>
-                <Th>Date Added</Th>
+                <Th>Feedback</Th>
+                <Th>Route</Th>
+                <Th>Visible</Th>
                 <Th>{''}</Th>
             </Tr>
             </thead>
