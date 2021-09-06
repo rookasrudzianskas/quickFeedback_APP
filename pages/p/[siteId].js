@@ -6,6 +6,8 @@ import {useAuth} from "@/lib/auth";
 import {useRouter} from "next/router";
 import {useRef, useState} from "react";
 import {createFeedback} from "@/lib/db";
+import useSWR from "swr";
+import fetcher from "../../utils/fetcher";
 
 const SiteFeedback = ({ initialFeedback }) => {
 
@@ -51,9 +53,21 @@ const SiteFeedback = ({ initialFeedback }) => {
                 <Box as="form" onSubmit={onSubmit}>
                     <FormControl my={8} id="comment">
                         <FormLabel>Comment</FormLabel>
-                        <Input  value={value} onChange={handleChange} ref={inputEl} type="comment" id="comment" />
-                        <Button fontWeight="medium" type="submit" mt={2}>
-                            Add Comment
+                        <Input placeholder="Leave the comment" value={value} onChange={handleChange} ref={inputEl} type="comment" id="comment" />
+                        <Button
+                            type="submit"
+                            isDisabled={router.isFallback}
+                            backgroundColor="gray.900"
+                            color="white"
+                            fontWeight="medium"
+                            mt={4}
+                            _hover={{ bg: 'gray.700' }}
+                            _active={{
+                                bg: 'gray.800',
+                                transform: 'scale(0.95)'
+                            }}
+                        >
+                            Leave Feedback
                         </Button>
                     </FormControl>
                 </Box>
