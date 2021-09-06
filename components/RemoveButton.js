@@ -11,7 +11,11 @@ import {useRef, useState} from "react";
 
 function AlertDialogExample() {
     const [isOpen, setIsOpen] = useState(false)
-    const onClose = () => setIsOpen(false)
+    const onClose = () => setIsOpen(false);
+    const deleteFeedback = () => {
+        console.log('Done');
+        onClose();
+    }
     const cancelRef = useRef()
 
     return (
@@ -42,7 +46,7 @@ function AlertDialogExample() {
                             <Button ref={cancelRef} onClick={onClose}>
                                 Cancel
                             </Button>
-                            <Button colorScheme="red" variantColor="red" onClick={onClose} ml={3}>
+                            <Button colorScheme="red" variantColor="red" onClick={deleteFeedback} ml={3}>
                                 Delete
                             </Button>
                         </AlertDialogFooter>
