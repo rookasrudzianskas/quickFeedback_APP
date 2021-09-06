@@ -2,6 +2,7 @@
 
 import {getAllSites, getUserSites} from "@/lib/db-admin";
 import {auth} from "@/lib/firebase-admin";
+import {formatObjectKeys, logger} from "../../utils/logger";
 
 export default async function handler(req, res) {
     // console.log(req.headers);
@@ -14,10 +15,9 @@ export default async function handler(req, res) {
         res.status(200).json(sites);
 
     } catch (error) {
-        const headers = prepObjectKeys(req.headers)
         logger.error({
             request: {
-                headers: headers,
+                headers: formatObjectKeys(req.headers),
                 url: req.url,
                 method: req.method,
             },

@@ -6,33 +6,31 @@ const { stream, send } = logflarePinoVercel({
     sourceToken: "c60c1d14-39fa-407a-ac95-d99b2c8ce4dc"
 });
 
-const logger = pino({
-    browser: {
-        transmit: {
-            send: send,
+const logger = pino(
+    {
+        browser: {
+            transmit: {
+                send: send
+            }
+        },
+        level: 'debug',
+        base: {
+            env: process.env.NODE_ENV || 'ENV not set',
+            revision: process.env.VERCEL_GITHUB_COMMIT_SHA
         }
     },
-    level: "debug",
-    base: {
-        env: process.env.ENV || 'ENV not set',
-        revision: process.env.VERCEL_GITHUB_COMMIT_SHA,
-        },
-    }, stream
+    stream
 );
 
+const formatObjectKeys = (headers) => {
+    const keyValues = {};
 
-const formatObjectKeys = headers => {
-
-    const keyValues = {}
-
-    Object.keys(headers).map(key => {
-        const newKey = key.replace(/-/g, "_");
-        keyValues[newKey] = headers[key]
+    Object.keys(headers).map((key) => {
+        const newKey = key.replace(/-/g, '_');
+        keyValues[newKey] = headers[key];
     });
 
-    return keyValues
-}
+    return keyValues;
+};
 
-export { logger, formatObjectKeys }
-
-export default logger;
+export { logger, formatObjectKeys };
