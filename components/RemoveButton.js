@@ -4,7 +4,7 @@ import {
     AlertDialogContent, AlertDialogFooter,
     AlertDialogHeader,
     AlertDialogOverlay,
-    Button
+    Button, IconButton
 } from "@chakra-ui/core";
 import {useRef, useState} from "react";
 
@@ -16,9 +16,12 @@ function AlertDialogExample() {
 
     return (
         <>
-            <Button colorScheme="red" onClick={() => setIsOpen(true)}>
-                Delete Customer
-            </Button>
+            <IconButton
+                aria-label="Delete feedback"
+                icon="delete"
+                variant="ghost"
+                onClick={() => setIsOpen(true)}
+            />
 
             <AlertDialog
                 isOpen={isOpen}
@@ -39,7 +42,7 @@ function AlertDialogExample() {
                             <Button ref={cancelRef} onClick={onClose}>
                                 Cancel
                             </Button>
-                            <Button colorScheme="red" onClick={onClose} ml={3}>
+                            <Button colorScheme="red" variantColor="red" onClick={onClose} ml={3}>
                                 Delete
                             </Button>
                         </AlertDialogFooter>

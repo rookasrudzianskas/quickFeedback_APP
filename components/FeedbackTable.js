@@ -1,6 +1,7 @@
 import React from 'react';
 import {Box, Code, IconButton, Link, Skeleton, Switch} from '@chakra-ui/core';
 import { Table, Tr, Th, Td } from './Table';
+import RemoveButton from "@/components/RemoveButton";
 
 
 const FeedbackTable = ({ allFeedback }) => {
@@ -34,7 +35,7 @@ const FeedbackTable = ({ allFeedback }) => {
                         <Switch variantColor="green" size="md" defaultIsChecked={feedback.status === 'active'} />
                     </Td>
                     <Td>
-                        <IconButton aria-label="Delete Feedback" icon="delete" variant="ghost" />
+                        <RemoveButton />
                     </Td>
                 </Box>
             ))}
