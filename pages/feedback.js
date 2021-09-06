@@ -8,6 +8,7 @@ import DashboardShell from "@/components/DashboardShell";
 import useSWR from "swr";
 import fetcher from "../utils/fetcher";
 import FeedbackTable from "@/components/FeedbackTable";
+import FeedbackTableHeader from "@/components/FeedbackTableHeader";
 
 
 // import {useAuth} from "@/lib/auth";
@@ -19,6 +20,7 @@ const Feedback = () => {
     if(!data) {
         return (
             <DashboardShell>
+                <FeedbackTableHeader />
                 <SiteTableSkeleton />
             </DashboardShell>
         )
@@ -27,6 +29,7 @@ const Feedback = () => {
     if(!user) {
         return (
             <DashboardShell>
+                <FeedbackTableHeader />
                 <SiteTableSkeleton />
             </DashboardShell>
         )
@@ -39,6 +42,9 @@ const Feedback = () => {
             </Head>
 
             <DashboardShell overflow="hidden">
+
+                <FeedbackTableHeader />
+
                 {data?.feedback ? <FeedbackTable allFeedback={data.feedback} /> : <EmptyState />}
             </DashboardShell>
 
