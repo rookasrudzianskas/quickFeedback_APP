@@ -28,11 +28,20 @@ export default function Home() {
 
           <Flex direction="column" w="30vw" align="center">
             <Icon name="logo" color="black" size="64px" />
-          <Text noOfLines={2} fontSize="5xl">Quick Feedback</Text>
-            <Text>
-                It's the easiest way to add comments or reviews to your static site.
-                It's still a work-in-progress, but you can try it out by logging in.
-            </Text>
+              <Text mb={4} fontSize="lg" py={4}>
+                  <Text as="span" fontWeight="bold" display="inline">
+                      Quick Feedback
+                  </Text>
+                  {' was built as part of '}
+                  <Link
+                      href="https://byrookas.com"
+                      isExternal
+                      textDecoration="underline"
+                  >
+                      byRookas 2030
+                  </Link>
+                  {`. It's the easiest way to add comments or reviews to your static site. Try it out by leaving a comment below. After the comment is approved, it will display below.`}
+              </Text>
 
           {auth.user ? (
               <Button onClick={GoToDashboard} mt={6}>View Dashboard</Button>
