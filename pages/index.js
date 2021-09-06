@@ -44,7 +44,7 @@ export default function Home() {
               </Text>
 
           {auth.user ? (
-              <Button backgroundColor="white" color="gray.900" variant="outline" fontWeight="medium" _hover={{bg: 'gray.100'}} _active={{bg: 'gray.100', transform: 'scale(0.95)'}} onClick={GoToDashboard} mt={6} leftIcon="google">View Dashboard</Button>
+              <Button backgroundColor="white" color="gray.900" variant="outline" fontWeight="medium" _hover={{bg: 'gray.100'}} _active={{bg: 'gray.100', transform: 'scale(0.95)'}} onClick={GoToDashboard} mt={6}>View Dashboard</Button>
 
               ) : (
               <Stack>
