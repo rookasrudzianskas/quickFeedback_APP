@@ -33,7 +33,10 @@ export default function Home() {
           {auth.user ? (
               <Button mt={6}>View Dashboard</Button>
           ) : (
-              <Button backgroundColor="gray.900" color="white" fontWeight="medium" _hover={{bg: 'gray.700'}} _active={{bg: 'gray.800', transform: 'scale(0.95)'}} mt={4} onClick={(e) => auth.signinWithGithub()} leftIcon="github">Sign in with GitHub</Button>
+              <Stack>
+              <Button backgroundColor="gray.900" color="white" fontWeight="medium" _hover={{bg: 'gray.700'}} _active={{bg: 'gray.800', transform: 'scale(0.95)'}} mt={4} onClick={(e) => auth.signinWithGithub()} leftIcon="github">Sign In with GitHub</Button>
+              <Button backgroundColor="white" color="gray.900" variant="outline" fontWeight="medium" _hover={{bg: 'gray.100'}} _active={{bg: 'gray.100', transform: 'scale(0.95)'}} mt={4} onClick={(e) => auth.signinWithGithub()} leftIcon="google">Sign In with Google</Button>
+              </Stack>
           )}
           </Flex>
       </Flex>
