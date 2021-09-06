@@ -32,14 +32,7 @@ export default function Home() {
                   <Text as="span" fontWeight="bold" display="inline">
                       Quick Feedback
                   </Text>
-                  {' was built as part of '}
-                  <Link
-                      href="https://byrookas.com"
-                      isExternal
-                      textDecoration="underline"
-                  >
-                      byRookas 2030
-                  </Link>
+
                   {`. It's the easiest way to add comments or reviews to your static site. Try it out by leaving a comment below. After the comment is approved, it will display below.`}
               </Text>
 
