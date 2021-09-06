@@ -2,14 +2,28 @@ import { Box, Button, Flex, Text, Icon, Link, Stack, Heading, Code } from '@chak
 import Head from "next/head";
 import {useAuth} from "@/lib/auth";
 import {useRouter} from "next/router";
+import {getAllFeedback} from "@/lib/db-admin";
 
 
 // import {useAuth} from "@/lib/auth";
+
+export async function getStaticProps(context) {
+    const {feedback} = await getAllFeedback();
+
+    return {
+        props: {
+            allFeedback: feedback || []
+        },
+        revalidate: 1
+    };
+}
 
 export default function Home() {
 
     const auth = useAuth();
     const router = useRouter();
+
+
 
     const GoToDashboard = () => {
         router.push('/dashboard');
