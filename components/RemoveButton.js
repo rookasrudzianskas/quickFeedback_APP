@@ -23,7 +23,7 @@ function RemoveButton({feedbackId}) {
         mutate(
             ['/api/feedback', auth.user.token],
             async (data) => {
-                return { feedback: data.feedback.filter((feedback) => feedback.id === feedbackId) };
+                return { feedback: data.feedback.filter((feedback) => feedback.id !== feedbackId) };
             },
             false
         );
