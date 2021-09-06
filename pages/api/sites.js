@@ -31,4 +31,4 @@ export default async function handler(req, res) {
     }
 };
 
-// today is today and it is awesome
+// today's
