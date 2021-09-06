@@ -33,7 +33,7 @@ export default function Home() {
           {auth.user ? (
               <Button mt={6}>View Dashboard</Button>
           ) : (
-              <Button mt={6} varian="link" size="sm" onClick={(e) => auth.signinWithGithub()}>Sign In</Button>
+              <Button mt={6} varian="link" size="sm" onClick={(e) => auth.signinWithGithub()}>Sign In With GitHub</Button>
           )}
           </Flex>
       </Flex>
