@@ -7,13 +7,15 @@ import {
     Button, IconButton
 } from "@chakra-ui/core";
 import {useRef, useState} from "react";
+import {deleteFeedback} from "@/lib/db";
 
 
-function AlertDialogExample() {
+function RemoveButton({feedbackId}) {
     const [isOpen, setIsOpen] = useState(false)
     const onClose = () => setIsOpen(false);
-    const deleteFeedback = () => {
-        console.log('Done');
+    const onDelete = () => {
+        // console.log(feedbackId);
+        deleteFeedback(feedbackId);
         onClose();
     }
     const cancelRef = useRef()
@@ -46,7 +48,7 @@ function AlertDialogExample() {
                             <Button ref={cancelRef} onClick={onClose}>
                                 Cancel
                             </Button>
-                            <Button colorScheme="red" variantColor="red" onClick={deleteFeedback} ml={3}>
+                            <Button colorScheme="red" variantColor="red" onClick={onDelete} ml={3}>
                                 Delete
                             </Button>
                         </AlertDialogFooter>
@@ -57,4 +59,4 @@ function AlertDialogExample() {
     )
 }
 
-export default AlertDialogExample;
+export default RemoveButton;
