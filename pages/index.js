@@ -56,4 +56,3 @@ export default function Home() {
   )
 }
 
-// the start screen working cool today
