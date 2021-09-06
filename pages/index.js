@@ -92,8 +92,8 @@ export default function Home({ allFeedback, site }) {
               {allFeedback.map((feedback, index) => (
                   <Feedback
                       key={feedback.id}
-                      // settings={site?.settings}
-                      // isLast={index === allFeedback.length - 1}
+                      settings={site?.settings}
+                      isLast={index === allFeedback.length - 1}
                       {...feedback}
                   />
               ))}

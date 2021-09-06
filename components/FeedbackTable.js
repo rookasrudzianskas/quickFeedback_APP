@@ -6,6 +6,8 @@ import RemoveButton from "@/components/RemoveButton";
 
 const FeedbackTable = ({ allFeedback }) => {
 
+    console.log("This is feedback");
+
     return (
         <Table>
             <thead>
