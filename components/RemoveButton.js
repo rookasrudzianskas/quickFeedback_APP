@@ -6,12 +6,13 @@ import {
     AlertDialogOverlay,
     Button
 } from "@chakra-ui/core";
+import {useRef, useState} from "react";
 
 
 function AlertDialogExample() {
-    const [isOpen, setIsOpen] = React.useState(false)
+    const [isOpen, setIsOpen] = useState(false)
     const onClose = () => setIsOpen(false)
-    const cancelRef = React.useRef()
+    const cancelRef = useRef()
 
     return (
         <>
