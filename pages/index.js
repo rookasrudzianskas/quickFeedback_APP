@@ -103,6 +103,3 @@ export default function Home({ allFeedback, site }) {
       </>
   )
 }
-
-
-// stripe integration
