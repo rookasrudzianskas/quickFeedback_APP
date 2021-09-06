@@ -46,9 +46,9 @@ const InitialFocus = ({children}) => {
 
         mutate(
             ['/api/sites', auth.user.token],
-            async (data) => ({
-                sites: [{ ...newSite }, ...data.sites]
-            }),
+            async (data) => {
+                return { sites: [...data.sites, {id, ...newSite}]}
+            },
             false
         );
 
