@@ -1,6 +1,7 @@
 import React from 'react';
 import { Box, Heading, Text, Divider, Icon, Flex, Code } from '@chakra-ui/core';
 import { format, parseISO } from 'date-fns';
+import {useTheme} from "../utils/useTheme";
 // import ReactMarkdown from 'react-markdown';
 
 // import MDXComponents from './MDXComponents';

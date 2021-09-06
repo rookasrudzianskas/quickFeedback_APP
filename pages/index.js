@@ -5,7 +5,7 @@ import {useRouter} from "next/router";
 import {getAllFeedback, getSite} from "@/lib/db-admin";
 import LoginButtons from "@/components/LoginButtons";
 import FeedbackLink from "@/components/FeedbackLink";
-import Feedback from "./feedback";
+import Feedback from "@/components/Feedback";
 
 
 // import {useAuth} from "@/lib/auth";
@@ -92,8 +92,8 @@ export default function Home({ allFeedback, site }) {
               {allFeedback.map((feedback, index) => (
                   <Feedback
                       key={feedback.id}
-                      settings={site?.settings}
-                      isLast={index === allFeedback.length - 1}
+                      // settings={site?.settings}
+                      // isLast={index === allFeedback.length - 1}
                       {...feedback}
                   />
               ))}
