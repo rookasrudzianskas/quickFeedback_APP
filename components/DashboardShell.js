@@ -83,4 +83,3 @@ export default DashboardShell;
 // continuing today
 // Google auth
 // feedback for the users who are logged in
-// the same as for the websites
