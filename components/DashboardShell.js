@@ -59,17 +59,7 @@ const DashboardShell = ({children}) => {
                     direction="column"
                     maxWidth="1200px">
                     <Breadcrumb />
-                        <Breadcrumb>
-                            <BreadcrumbItem isCurrentPage>
-                                <BreadcrumbLink color="gray.700" fontSize="sm">Sites/</BreadcrumbLink>
-                            </BreadcrumbItem>
-                        </Breadcrumb>
-                    <Flex >
-                        <Heading flexGrow="1" mb={4}>My Sites</Heading>
-                        <AddSiteModal>
-                            + Add Site
-                        </AddSiteModal>
-                    </Flex>
+
                         {children}
                 </Flex>
             </Flex>
