@@ -4,6 +4,8 @@ import { Table, Tr, Th, Td } from './Table';
 
 
 const FeedbackTable = ({ allFeedback }) => {
+
+    console.log(allFeedback)
     return (
         <Table>
             <thead>
