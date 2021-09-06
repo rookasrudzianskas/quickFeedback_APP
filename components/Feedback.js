@@ -1,19 +1,52 @@
 import React from 'react';
-import {Box, Divider, Heading, Text} from "@chakra-ui/core";
-import {format, parseISO} from "date-fns";
+import { Box, Heading, Text, Divider, Icon, Flex, Code } from '@chakra-ui/core';
+import { format, parseISO } from 'date-fns';
+// import ReactMarkdown from 'react-markdown';
 
-const Feedback = ({ author, text, createdAt }) => {
+// import MDXComponents from './MDXComponents';
+
+const Feedback = ({ author, text, createdAt, provider, isLast, settings }) => {
+    const colorMode = useTheme();
+    const authorColor = {
+        light: 'gray.900',
+        dark: 'gray.200'
+    };
+    const textColor = {
+        light: 'gray.800',
+        dark: 'gray.300'
+    };
+    const dividerColor = {
+        light: 'gray.200',
+        dark: 'gray.700'
+    };
+
     return (
         <Box borderRadius={4} maxWidth="700px" w="full">
-           <Heading size="sm" as="h3" mb={0} color="gray.900" fontWeight="bold" >
-               {author}
-           </Heading>
+            <Flex align="center">
+                <Heading
+                    size="sm"
+                    as="h3"
+                    mb={0}
+                    color={authorColor[colorMode]}
+                    fontWeight="medium"
+                >
+                    {author}
+                </Heading>
+                {settings?.icons && (
+                    <Icon name={provider.slice(0, -4)} size="13px" ml="6px" />
+                )}
+            </Flex>
+            {settings?.timestamp && (
+                <Text color="gray.500" mb={4} fontSize="xs">
+                    {format(parseISO(createdAt), 'PPpp')}
+                </Text>
+            )}
+            <Box color={textColor[colorMode]}>
 
-            <Text color="gray.500" mb={4} fontSize="xs">
-                {format(parseISO(createdAt), 'PPpp')}
-            </Text>
-            <Text color="gray.800"   mb={6}>{text}</Text>
-            <Divider borderColor="gray.200" backgroundColor="white" mb={6}/>
+            </Box>
+            {!isLast && (
+                <Divider borderColor={dividerColor[colorMode]} mt={6} mb={6} />
+            )}
         </Box>
     );
 };
