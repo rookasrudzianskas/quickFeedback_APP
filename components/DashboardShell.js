@@ -42,7 +42,9 @@ const DashboardShell = ({children}) => {
                     px={8}
                 >
                     <Stack spacing={4} isInline align="center">
-                        <Icon name="logo" color="black" size="24px"/>
+                        <NextLink href={'/'} passHref>
+                            <Icon mr={4} name="logo" color="black" size="24px"/>
+                        </NextLink>
                         <NextLink href={'/dashboard'} passHref>
                             <Link>Sites</Link>
                             </NextLink>
