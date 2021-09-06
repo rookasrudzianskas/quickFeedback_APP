@@ -59,8 +59,8 @@ export default function Home({ allFeedback, site }) {
                   {auth.user ? (
                       <Button
                           as="a"
-                          onClick={GoToDashboard}
-                          href="/sites"
+                          // onClick={GoToDashboard}
+                          href="/dashboard"
                           backgroundColor="gray.900"
                           color="white"
                           fontWeight="medium"
