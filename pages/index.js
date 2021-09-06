@@ -7,12 +7,17 @@ import {getAllFeedback} from "@/lib/db-admin";
 
 // import {useAuth} from "@/lib/auth";
 
+const SITE_ID = '8m2dLXIOiEbH5W3L1JkL';
+
+
 export async function getStaticProps(context) {
-    const {feedback} = await getAllFeedback();
+    const { feedback } = await getAllFeedback(SITE_ID);
+    // const { site } = await getSite(SITE_ID);
 
     return {
         props: {
-            allFeedback: feedback || []
+            allFeedback: feedback,
+            site
         },
         revalidate: 1
     };
