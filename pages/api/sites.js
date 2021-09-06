@@ -25,7 +25,8 @@ export default async function handler(req, res) {
                 statusCode: res.statusCode,
             }
         },
-            "API request")
+            "Error in /api/sites"
+    );
         res.status(500).json({ error: error });
     }
 };
