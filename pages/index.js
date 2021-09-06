@@ -39,15 +39,11 @@ export default function Home() {
           <Box bg="gray.100" py={16} px={4}>
               <Flex as="main" direction="column" maxW="700px" margin="0 auto">
                   <Head>
-                      <script
-                          dangerouslySetInnerHTML={{
-                              __html: `
-              if (document.cookie && document.cookie.includes('fast-feedback-auth')) {
-                window.location.href = "/sites"
-              }
-            `
-                          }}
-                      />
+                      <script dangerouslySetInnerHTML={{ __html: `
+                  if (document.cookie && document.cookie.includes('quick-feedback-auth')) {
+                    window.location.href = "/dashboard"
+                  }
+                ` }} />
                   </Head>
                   <Icon color="black" name="logo" size="48px" mb={2} />
                   <Text mb={4} fontSize="lg" py={4}>
