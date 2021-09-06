@@ -11,6 +11,10 @@ export default function Home() {
     const auth = useAuth();
     const router = useRouter();
 
+    const GoToDashboard = () => {
+        router.push('/dashboard');
+    }
+
   return (
       <Flex as="main" direction="column" align="center" justify="center" h="100vh">
         <Head>
@@ -31,11 +35,11 @@ export default function Home() {
             </Text>
 
           {auth.user ? (
-              <Button mt={6}>View Dashboard</Button>
+              <Button onClick={GoToDashboard} mt={6}>View Dashboard</Button>
           ) : (
               <Stack>
               <Button backgroundColor="gray.900" color="white" fontWeight="medium" _hover={{bg: 'gray.700'}} _active={{bg: 'gray.800', transform: 'scale(0.95)'}} mt={4} onClick={(e) => auth.signinWithGithub()} leftIcon="github">Sign In with GitHub</Button>
-              <Button backgroundColor="white" color="gray.900" variant="outline" fontWeight="medium" _hover={{bg: 'gray.100'}} _active={{bg: 'gray.100', transform: 'scale(0.95)'}} mt={4} onClick={(e) => auth.signinWithGithub()} leftIcon="google">Sign In with Google</Button>
+              <Button backgroundColor="white" color="gray.900" variant="outline" fontWeight="medium" _hover={{bg: 'gray.100'}} _active={{bg: 'gray.100', transform: 'scale(0.95)'}} mt={4} onClick={(e) => auth.signinWithGoogle()} leftIcon="google">Sign In with Google</Button>
               </Stack>
           )}
           </Flex>
