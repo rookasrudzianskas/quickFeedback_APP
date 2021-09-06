@@ -14,6 +14,18 @@ export default async function handler(req, res) {
         res.status(200).json(sites);
 
     } catch (error) {
+        const headers = prepObjectKeys(req.headers)
+        logger.error({
+            request: {
+                headers: headers,
+                url: req.url,
+                method: req.method,
+            },
+            response: {
+                statusCode: res.statusCode,
+            }
+        },
+            "API request")
         res.status(500).json({ error: error });
     }
 };
