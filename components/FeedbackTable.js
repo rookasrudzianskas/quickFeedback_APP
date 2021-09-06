@@ -31,7 +31,7 @@ const FeedbackTable = ({ allFeedback }) => {
                         <Code>{'/'}</Code>
                     </Td>
                     <Td>
-                        <Switch size="md" defaultIsChecked={feedback.status === 'active'} />
+                        <Switch variantColor="green" size="md" defaultIsChecked={feedback.status === 'active'} />
                     </Td>
                     <Td>
                         <IconButton aria-label="Delete Feedback" icon="delete" variant="ghost" />
