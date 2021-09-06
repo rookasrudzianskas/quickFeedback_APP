@@ -88,15 +88,15 @@ export default function Home({ allFeedback, site }) {
               mt={8}
               px={4}
           >
-              <FeedbackLink paths={[SITE_ID]} />
-              {allFeedback.map((feedback, index) => (
-                  <Feedback
-                      key={feedback.id}
-                      settings={site?.settings}
-                      isLast={index === allFeedback.length - 1}
-                      {...feedback}
-                  />
-              ))}
+              {/*<FeedbackLink paths={[SITE_ID]} />*/}
+              {/*{allFeedback.map((feedback, index) => (*/}
+              {/*    <Feedback*/}
+              {/*        key={feedback.id}*/}
+              {/*        settings={site?.settings}*/}
+              {/*        isLast={index === allFeedback.length - 1}*/}
+              {/*        {...feedback}*/}
+              {/*    />*/}
+              {/*))}*/}
           </Box>
           {/*<Footer />*/}
       </>
