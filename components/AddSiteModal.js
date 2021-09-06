@@ -32,7 +32,7 @@ const InitialFocus = ({children}) => {
             url,
         };
 
-        createSite(newSite);
+        const {id} = createSite(newSite);
         toast({
             title: "Success!",
             description: "We've created added your site.",
