@@ -22,13 +22,16 @@ const FeedbackTable = ({ allFeedback }) => {
 
                 <Box key={feedback.id} as="tr">
                     <Td fontWeight="medium">
-                        {feedback.name}
+                        {feedback.author}
                     </Td>
                     <Td>
                         {feedback.text}
                     </Td>
                     <Td>
                         <Code>{'/'}</Code>
+                    </Td>
+                    <Td>
+                        {'Visible'}
                     </Td>
                     <Td>
                         {'Remove'}
