@@ -42,6 +42,7 @@ export default function Home({ allFeedback, site }) {
           <Box bg="gray.100" py={16} px={4}>
               <Flex as="main" direction="column" maxW="700px" margin="0 auto">
                   <Head>
+                      <title>Quick Feedback app</title>
                       <script dangerouslySetInnerHTML={{ __html: `
                   if (document.cookie && document.cookie.includes('quick-feedback-auth')) {
                     window.location.href = "/dashboard"
@@ -103,3 +104,5 @@ export default function Home({ allFeedback, site }) {
   )
 }
 
+
+// stripe integration
