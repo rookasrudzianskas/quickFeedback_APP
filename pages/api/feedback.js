@@ -1,6 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 
-import {getAllSites, getUserSites} from "@/lib/db-admin";
+import {getAllSites, getUserFeedback, getUserSites} from "@/lib/db-admin";
 import {auth} from "@/lib/firebase-admin";
 
 export default async function handler(req, res) {
