@@ -72,7 +72,7 @@ const SiteFeedback = ({ initialFeedback }) => {
                     </FormControl>
                 </Box>
 
-                {allFeedback.map((feedback) => (
+                {allFeedback?.map((feedback) => (
                         <Feedback key={feedback.createdAt} {...feedback} />
                 ))}
             </Box>
