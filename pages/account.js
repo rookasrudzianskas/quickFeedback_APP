@@ -159,26 +159,6 @@ const Account = () => {
                                 Manage Billing
                             </Button>
 
-                            {/*<Button*/}
-                            {/*    as="a"*/}
-                            {/*    onClick={(e) => {*/}
-                            {/*        // setBillingLoading(true);*/}
-                            {/*        createCheckoutSession(user.uid);*/}
-                            {/*    }}*/}
-                            {/*    // href="/dashboard"*/}
-                            {/*    backgroundColor="gray.900"*/}
-                            {/*    color="white"*/}
-                            {/*    fontWeight="medium"*/}
-                            {/*    mt={4}*/}
-                            {/*    maxW="200px"*/}
-                            {/*    _hover={{ bg: 'gray.700' }}*/}
-                            {/*    _active={{*/}
-                            {/*        bg: 'gray.800',*/}
-                            {/*        transform: 'scale(0.95)'*/}
-                            {/*    }}*/}
-                            {/*>*/}
-                            {/*    Upgrade to Starter*/}
-                            {/*</Button>*/}
                         </Flex>
                     </SettingsTable>
                 </Flex>
