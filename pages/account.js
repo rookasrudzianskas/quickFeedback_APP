@@ -42,23 +42,26 @@ const Account = () => {
             </Head>
 
             <DashboardShell overflow="hidden">
-                <Button
-                    as="a"
-                    onClick={(e) => createCheckoutSession(user.uid)}
-                    href="/dashboard"
-                    backgroundColor="gray.900"
-                    color="white"
-                    fontWeight="medium"
-                    mt={4}
-                    maxW="200px"
-                    _hover={{ bg: 'gray.700' }}
-                    _active={{
-                        bg: 'gray.800',
-                        transform: 'scale(0.95)'
-                    }}
-                >
-                    Upgrade to Starter
-                </Button>
+                <Box>
+
+                    <Button
+                        as="a"
+                        onClick={(e) => createCheckoutSession(user.uid)}
+                        // href="/dashboard"
+                        backgroundColor="gray.900"
+                        color="white"
+                        fontWeight="medium"
+                        mt={4}
+                        maxW="200px"
+                        _hover={{ bg: 'gray.700' }}
+                        _active={{
+                            bg: 'gray.800',
+                            transform: 'scale(0.95)'
+                        }}
+                    >
+                        Upgrade to Starter
+                    </Button>
+                </Box>
             </DashboardShell>
 
         </>
