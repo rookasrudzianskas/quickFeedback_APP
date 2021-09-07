@@ -54,7 +54,7 @@ const DashboardShell = ({children}) => {
                         </NextLink>
                     </Stack>
                     <Flex justifyContent="flex-start" alignItems="center">
-                        {auth.user && <Link onClick={signOutFromApp} mr={4}>Log Out</Link>}
+                        {auth.user && <Link onClick={router.push('/account')} mr={4}>Account</Link>}
                         <Avatar size="sm" src={auth?.user?.photoUrl} />
                     </Flex>
                 </Flex>
