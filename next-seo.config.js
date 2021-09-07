@@ -14,7 +14,7 @@ const SEO = {
         description,
         images: [
             {
-                url: 'https://fastfeedback.io/og.png',
+                url: 'https://fastfeedback.io/OG.png',
                 alt: title,
                 width: 1280,
                 height: 720
