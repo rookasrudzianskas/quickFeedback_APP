@@ -25,8 +25,8 @@ const UpgradeEmptyState = () => {
         <Button
             as="a"
             onClick={(e) => {
+                setIsCheckoutLoading(true);
                 createCheckoutSession(user.uid)
-                setIsCheckoutLoading();
             }}
             // href="/dashboard"
             backgroundColor="gray.900"
