@@ -107,9 +107,6 @@ const Account = () => {
 
     return (
         <>
-            <Head>
-                <title>Account</title>
-            </Head>
 
             <DashboardShell>
                 <Flex

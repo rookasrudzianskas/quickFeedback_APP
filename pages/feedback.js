@@ -37,9 +37,6 @@ const Feedback = () => {
 
     return (
         <>
-            <Head>
-                <title>Feedback</title>
-            </Head>
 
             <DashboardShell overflow="hidden">
 

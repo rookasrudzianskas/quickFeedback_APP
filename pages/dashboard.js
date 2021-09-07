@@ -49,9 +49,6 @@ const Dashboard = () => {
 
     return (
         <>
-            <Head>
-                <title>Dashboard</title>
-            </Head>
 
             <DashboardShell overflow="hidden">
                 <SiteTableHeader isPaidAccount={isPaidAccount} />
