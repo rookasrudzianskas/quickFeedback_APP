@@ -53,8 +53,8 @@ const Dashboard = () => {
 
             <DashboardShell overflow="hidden">
                 <SiteTableHeader />
-                <UpgradeEmptyState />
-                {/*{user?.stripeRole ? <EmptyState /> : <UpgradeEmptyState />}*/}
+                {/*<UpgradeEmptyState />*/}
+                {user?.stripeRole ? <EmptyState /> : <UpgradeEmptyState />}
             </DashboardShell>
 
         </>

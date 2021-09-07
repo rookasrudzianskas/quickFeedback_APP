@@ -14,7 +14,7 @@ import {useAuth} from "@/lib/auth";
 
 const UpgradeEmptyState = () => {
 
-    const user = useAuth();
+    const {user} = useAuth();
     const [isCheckoutLoading, setIsCheckoutLoading] = useState(false);
 
     return (
