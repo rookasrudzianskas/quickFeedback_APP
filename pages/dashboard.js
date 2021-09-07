@@ -9,6 +9,7 @@ import useSWR from "swr";
 import fetcher from "../utils/fetcher";
 import SiteTable from "@/components/SiteTable";
 import SiteTableHeader from "@/components/SiteTableHeader";
+import UpgradeEmptyState from "@/components/UpgradeEmptyState";
 
 
 // import {useAuth} from "@/lib/auth";
@@ -52,7 +53,8 @@ const Dashboard = () => {
 
             <DashboardShell overflow="hidden">
                 <SiteTableHeader />
-                {user?.stripeRole ? <EmptyState /> : <UpgradeEmptyState />}
+                <UpgradeEmptyState />
+                {/*{user?.stripeRole ? <EmptyState /> : <UpgradeEmptyState />}*/}
             </DashboardShell>
 
         </>
