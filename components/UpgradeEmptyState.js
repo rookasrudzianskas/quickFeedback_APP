@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {
     Heading,
     Box,
@@ -15,6 +15,8 @@ import {useAuth} from "@/lib/auth";
 const UpgradeEmptyState = () => {
 
     const user = useAuth();
+    const [isCheckoutLoading, setIsCheckoutLoading] = useState(false);
+
     return (
     <Flex width="100%" backgroundColor="white" borderRadius="8px" p={16} justify="center" direction="column" align="center">
         <Heading mb={2} size="lg">Get feedback on your site instantly.</Heading>
@@ -22,13 +24,17 @@ const UpgradeEmptyState = () => {
 
         <Button
             as="a"
-            onClick={(e) => createCheckoutSession(user.uid)}
+            onClick={(e) => {
+                createCheckoutSession(user.uid)
+                setIsCheckoutLoading();
+            }}
             // href="/dashboard"
             backgroundColor="gray.900"
             color="white"
             fontWeight="medium"
             mt={2}
             maxW="200px"
+            isLoading={isCheckoutLoading}
             _hover={{ bg: 'gray.700' }}
             _active={{
                 bg: 'gray.800',
