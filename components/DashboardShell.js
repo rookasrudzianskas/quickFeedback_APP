@@ -23,8 +23,7 @@ const DashboardShell = ({title, route, children}) => {
 
     const auth = useAuth();
     const path = window.location.pathname;
-    const signOut = () => {
-    }
+
 
     const router = useRouter();
     const signOutFromApp = () => {
