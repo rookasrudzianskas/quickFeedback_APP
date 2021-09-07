@@ -94,7 +94,7 @@ const Account = () => {
                     >
                         Settings
                     </Text>
-                    <Badge h="1rem" variantColor="blue">
+                    <Badge h="1rem" variantColor={`${stripeRole === 'starter'  ? "blue" : "green"}`}>
                         {stripeRole}
                     </Badge>
                 </Flex>
