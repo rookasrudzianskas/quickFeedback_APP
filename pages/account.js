@@ -9,6 +9,7 @@ import useSWR from "swr";
 import fetcher from "../utils/fetcher";
 import SiteTable from "@/components/SiteTable";
 import SiteTableHeader from "@/components/SiteTableHeader";
+import {createCheckoutSession} from "@/lib/db";
 
 
 // import {useAuth} from "@/lib/auth";
@@ -43,7 +44,7 @@ const Account = () => {
             <DashboardShell overflow="hidden">
                 <Button
                     as="a"
-                    // onClick={GoToDashboard}
+                    onClick={(e) => createCheckoutSession(user.uid)}
                     href="/dashboard"
                     backgroundColor="gray.900"
                     color="white"
@@ -56,7 +57,7 @@ const Account = () => {
                         transform: 'scale(0.95)'
                     }}
                 >
-                    View Dashboard
+                    Upgrade to Starter
                 </Button>
             </DashboardShell>
 
