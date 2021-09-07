@@ -31,6 +31,10 @@ const DashboardShell = ({children}) => {
 
     }
 
+    const goToAccount = () => {
+        router.push('/account');
+    }
+
     return  (
         <Flex flexDirection="column" overflow="hidden">
             <Box as='header' sx={{ position: '-webkit-sticky', /* Safari */ top: '0', }}>
@@ -54,7 +58,7 @@ const DashboardShell = ({children}) => {
                         </NextLink>
                     </Stack>
                     <Flex justifyContent="flex-start" alignItems="center">
-                        {auth.user && <Link onClick={router.push('/account')} mr={4}>Account</Link>}
+                        <Link onClick={goToAccount} mr={4}>Account</Link>
                         <Avatar size="sm" src={auth?.user?.photoUrl} />
                     </Flex>
                 </Flex>
