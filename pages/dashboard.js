@@ -17,6 +17,8 @@ import UpgradeEmptyState from "@/components/UpgradeEmptyState";
 const Dashboard = () => {
     const { user } = useAuth();
     const { data, error } = useSWR(user ? ['/api/sites', user.token] : null, fetcher);
+    const isPaidAccount = user?.stripeRole;
+
     console.log(data);
     if(!data) {
         return (
@@ -52,9 +54,9 @@ const Dashboard = () => {
             </Head>
 
             <DashboardShell overflow="hidden">
-                <SiteTableHeader />
+                <SiteTableHeader isPaidAccount={isPaidAccount} />
                 {/*<UpgradeEmptyState />*/}
-                {user?.stripeRole ? <EmptyState /> : <UpgradeEmptyState />}
+                {isPaidAccount ? <EmptyState /> : <UpgradeEmptyState />}
             </DashboardShell>
 
         </>
