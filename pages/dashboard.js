@@ -35,6 +35,15 @@ const Dashboard = () => {
         )
     }
 
+    if(data.sites.length) {
+        return (
+            <DashboardShell overflow="hidden">
+                <SiteTableHeader />
+                <SiteTable sites={data.sites} />
+            </DashboardShell>
+        )
+    }
+
     return (
         <>
             <Head>
@@ -43,7 +52,7 @@ const Dashboard = () => {
 
             <DashboardShell overflow="hidden">
                 <SiteTableHeader />
-                {data.sites.length ? <SiteTable sites={data.sites} /> : <EmptyState />}
+                {user?.stripeRole ? <EmptyState /> : <UpgradeEmptyState />}
             </DashboardShell>
 
         </>
