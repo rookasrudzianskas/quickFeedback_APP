@@ -17,10 +17,12 @@ import NextLink from 'next/link'
 import {useAuth} from "@/lib/auth";
 import AddSiteModal from "@/components/AddSiteModal";
 import {useRouter} from "next/router";
+import {NextSeo} from "next-seo";
 
-const DashboardShell = ({children}) => {
+const DashboardShell = ({title, route, children}) => {
 
     const auth = useAuth();
+    const path = window.location.pathname;
     const signOut = () => {
     }
 
@@ -36,46 +38,56 @@ const DashboardShell = ({children}) => {
     }
 
     return  (
-        <Flex flexDirection="column" overflow="hidden">
-            <Box as='header' sx={{ position: '-webkit-sticky', /* Safari */ top: '0', }}>
+        <>
+            <NextSeo
+                title={`Quick Feedback - ${title}`}
+                canonical={url}
+                openGraph={{
+                    url,
+                    title: `Quick Feedback - ${title}`
+                }}
+            />
+            <Flex flexDirection="column" overflow="hidden">
+                <Box as='header' sx={{ position: '-webkit-sticky', /* Safari */ top: '0', }}>
 
-            <Flex
-                    backgroundColor="white"
-                    justifyContent="space-between"
-                    py={4}
-                    px={8}
-                >
-                    <Stack spacing={4} isInline align="center">
-                        <NextLink href={'/'} passHref>
-                            <Icon mr={4} name="logo" color="black" size="24px"/>
-                        </NextLink>
-                        <NextLink href={'/dashboard'} passHref>
-                            <Link>Sites</Link>
+                <Flex
+                        backgroundColor="white"
+                        justifyContent="space-between"
+                        py={4}
+                        px={8}
+                    >
+                        <Stack spacing={4} isInline align="center">
+                            <NextLink href={'/'} passHref>
+                                <Icon mr={4} name="logo" color="black" size="24px"/>
                             </NextLink>
+                            <NextLink href={'/dashboard'} passHref>
+                                <Link>Sites</Link>
+                                </NextLink>
 
-                        <NextLink href={'/feedback'} passHref>
-                            <Link ml={4}>Feedback</Link>
-                        </NextLink>
-                    </Stack>
-                    <Flex justifyContent="flex-start" alignItems="center">
-                        <Link onClick={goToAccount} mr={4}>Account</Link>
-                        <Avatar size="sm" src={auth?.user?.photoUrl} />
+                            <NextLink href={'/feedback'} passHref>
+                                <Link ml={4}>Feedback</Link>
+                            </NextLink>
+                        </Stack>
+                        <Flex justifyContent="flex-start" alignItems="center">
+                            <Link onClick={goToAccount} mr={4}>Account</Link>
+                            <Avatar size="sm" src={auth?.user?.photoUrl} />
+                        </Flex>
+                    </Flex>
+                </Box>
+                <Flex backgroundColor="blackAlpha.50" p={8} height="93vh">
+                    <Flex
+                        w="100%"
+                        ml="auto"
+                        mr="auto"
+                        direction="column"
+                        maxWidth="1200px">
+                        <Breadcrumb />
+
+                            {children}
                     </Flex>
                 </Flex>
-            </Box>
-            <Flex backgroundColor="blackAlpha.50" p={8} height="93vh">
-                <Flex
-                    w="100%"
-                    ml="auto"
-                    mr="auto"
-                    direction="column"
-                    maxWidth="1200px">
-                    <Breadcrumb />
-
-                        {children}
-                </Flex>
             </Flex>
-        </Flex>
+        </>
     )
 }
 
