@@ -23,6 +23,8 @@ const DashboardShell = ({title, route, children}) => {
 
     const auth = useAuth();
     const path = window.location.pathname;
+    const title = `Quick Feedback - ${title}`;
+    const url =  `https://www.quickfeedback.digital/${path}`;
 
 
     const router = useRouter();
@@ -39,11 +41,11 @@ const DashboardShell = ({title, route, children}) => {
     return  (
         <>
             <NextSeo
-                title={`Quick Feedback - ${title}`}
+                title={title}
                 canonical={url}
                 openGraph={{
                     url,
-                    title: `Quick Feedback - ${title}`
+                    title,
                 }}
             />
             <Flex flexDirection="column" overflow="hidden">
