@@ -9,7 +9,7 @@ import useSWR from "swr";
 import fetcher from "../utils/fetcher";
 import SiteTable from "@/components/SiteTable";
 import SiteTableHeader from "@/components/SiteTableHeader";
-import {createCheckoutSession} from "@/lib/db";
+import {createCheckoutSession, goToBillingPortal} from "@/lib/db";
 
 
 // import {useAuth} from "@/lib/auth";
@@ -61,6 +61,26 @@ const Account = () => {
                     >
                         Upgrade to Starter
                     </Button>
+
+                    <Button
+                        as="a"
+                        onClick={(e) => goToBillingPortal(user.uid)}
+                        // href="/dashboard"
+                        backgroundColor="gray.900"
+                        color="white"
+                        fontWeight="medium"
+                        mt={4}
+                        ml={4}
+                        maxW="200px"
+                        _hover={{ bg: 'gray.700' }}
+                        _active={{
+                            bg: 'gray.800',
+                            transform: 'scale(0.95)'
+                        }}
+                    >
+                        View Billing Portal
+                    </Button>
+
                 </Box>
             </DashboardShell>
 
