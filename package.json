@@ -20,6 +20,7 @@
     "framer-motion": "^4",
     "js-cookie": "^3.0.1",
     "next": "11.1.0",
+    "next-seo": "^4.26.0",
     "pino": "^6.13.0",
     "pino-logflare": "^0.3.12",
     "react": "17.0.2",

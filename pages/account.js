@@ -25,6 +25,7 @@ import SiteTable from "@/components/SiteTable";
 import SiteTableHeader from "@/components/SiteTableHeader";
 import {createCheckoutSession, goToBillingPortal} from "@/lib/db";
 import {useState} from "react";
+import Page from "@/components/Page";
 
 
 // import {useAuth} from "@/lib/auth";
@@ -173,4 +174,4 @@ const AccountPage = () => (
 
 
 
-export default Account;
+export default AccountPage;
