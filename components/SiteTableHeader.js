@@ -2,7 +2,7 @@ import React from 'react';
 import {Breadcrumb, BreadcrumbItem, BreadcrumbLink, Flex, Heading} from "@chakra-ui/core";
 import AddSiteModal from "@/components/AddSiteModal";
 
-const SiteTableHeader = () => {
+const SiteTableHeader = ({stripeRole}) => {
     return (
         <>
             <Breadcrumb>
@@ -12,9 +12,9 @@ const SiteTableHeader = () => {
             </Breadcrumb>
             <Flex >
                 <Heading flexGrow="1" mb={4}>My Sites</Heading>
-                <AddSiteModal>
+                {stripeRole && <AddSiteModal>
                     + Add Site
-                </AddSiteModal>
+                </AddSiteModal>}
             </Flex>
         </>
     );
