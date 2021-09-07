@@ -96,6 +96,7 @@ const Account = () => {
                     </Text>
                     <Badge h="1rem" variantColor="blue">
                         {stripeRole}
+                        Active
                     </Badge>
                 </Flex>
             </Flex>
