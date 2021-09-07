@@ -19,11 +19,11 @@ import AddSiteModal from "@/components/AddSiteModal";
 import {useRouter} from "next/router";
 import {NextSeo} from "next-seo";
 
-const DashboardShell = ({title, route, children}) => {
+const DashboardShell = ({name, children}) => {
 
     const auth = useAuth();
     const path = window.location.pathname;
-    const title = `Quick Feedback - ${title}`;
+    const title = `Quick Feedback - ${name}`;
     const url =  `https://www.quickfeedback.digital/${path}`;
 
 
