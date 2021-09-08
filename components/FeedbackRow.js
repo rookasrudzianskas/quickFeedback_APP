@@ -18,9 +18,7 @@ const FeedbackRow = ({ id, author, text, route, status }) => {
     const toggleFeedback = (e) => {
         setChecked(!checked);
         updateFeedback(id, {status: !checked ? 'active' : 'pending'});
-        mutate(
-            ['/api/feedback', auth.user.token],
-        );
+        mutate(['/api/feedback', auth.user.token]);
         // console.log(checked, id)
     };
 
