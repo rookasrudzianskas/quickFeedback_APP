@@ -6,7 +6,11 @@ import RemoveButton from "@/components/RemoveButton";
 
 const FeedbackTable = ({ allFeedback }) => {
 
-    console.log("This is feedback");
+
+    // console.log("This is feedback");
+    const toggleFeedback = () => {
+
+    }
 
     return (
         <Table>
@@ -33,7 +37,7 @@ const FeedbackTable = ({ allFeedback }) => {
                         <Code>{'/'}</Code>
                     </Td>
                     <Td>
-                        <Switch variantColor="green" size="md" defaultIsChecked={feedback.status === 'active'} />
+                        <Switch onChange={toggleFeedback} variantColor="green" size="md" defaultIsChecked={feedback.status === 'active'} />
                     </Td>
                     <Td>
                         <RemoveButton feedbackId={feedback.id} />
