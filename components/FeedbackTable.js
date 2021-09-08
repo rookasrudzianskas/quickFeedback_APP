@@ -8,8 +8,8 @@ const FeedbackTable = ({ allFeedback }) => {
 
 
     // console.log("This is feedback");
-    const toggleFeedback = () => {
-
+    const toggleFeedback = (e) => {
+        console.log(e);
     }
 
     return (
