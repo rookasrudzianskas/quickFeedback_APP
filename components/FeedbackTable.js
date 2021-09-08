@@ -2,6 +2,8 @@ import React from 'react';
 import {Box, Code, IconButton, Link, Skeleton, Switch} from '@chakra-ui/core';
 import { Table, Tr, Th, Td } from './Table';
 import RemoveButton from "@/components/RemoveButton";
+import {useRouter} from "next/router";
+import FeedbackRow from "@/components/FeedbackRow";
 
 
 const FeedbackTable = ({ allFeedback }) => {
@@ -13,6 +15,7 @@ const FeedbackTable = ({ allFeedback }) => {
         console.log(e);
     }
 
+    const route = useRouter();
     return (
         <Table>
             <thead>
@@ -26,24 +29,7 @@ const FeedbackTable = ({ allFeedback }) => {
             </thead>
             <tbody>
             {allFeedback.map((feedback) => (
-
-                <Box key={feedback.id} as="tr">
-                    <Td fontWeight="medium">
-                        {feedback.author}
-                    </Td>
-                    <Td>
-                        {feedback.text}
-                    </Td>
-                    <Td>
-                        <Code>{'/'}</Code>
-                    </Td>
-                    <Td>
-                        <Switch onClick={toggleFeedback} variantColor="green" size="md" defaultIsChecked={feedback.status === 'active'} />
-                    </Td>
-                    <Td>
-                        <RemoveButton feedbackId={feedback.id} />
-                    </Td>
-                </Box>
+                <FeedbackRow key={feedback.id} {...feedback} />
             ))}
             </tbody>
         </Table>

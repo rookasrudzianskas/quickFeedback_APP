@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Box, Code, IconButton, Link, Skeleton, Switch} from '@chakra-ui/core';
 import { Table, Tr, Th, Td } from './Table';
 import RemoveButton from "@/components/RemoveButton";
@@ -6,11 +6,12 @@ import RemoveButton from "@/components/RemoveButton";
 
 const FeedbackRow = ({ id, author, text, route, status }) => {
 
+    const [checked, setChecked] = useState(status === 'active');
 
     // console.log("This is feedback");
 
     const toggleFeedback = (e) => {
-        console.log(e);
+        setChecked(!checked);
     }
 
     return (
@@ -23,6 +24,15 @@ const FeedbackRow = ({ id, author, text, route, status }) => {
             </Td>
             <Td>
                 <Code>{route || '/'}</Code>
+            </Td>
+
+            <Td>
+                <Switch
+                    onChange={toggleFeedback}
+                    isChecked={checked}
+                    variantColor="green"
+                    size="md"
+                />
             </Td>
 
             <Td>
