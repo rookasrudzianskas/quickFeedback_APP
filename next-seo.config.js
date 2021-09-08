@@ -1,6 +1,6 @@
 const title =
     'Quick Feedback – The easiest way to add comments or reviews to your static site.';
-const description = 'Quick Feedback is being built as part of React 2025.';
+const description = 'Quick Feedback is being built as a part of byRookas startups environment.';
 
 const SEO = {
     title,
