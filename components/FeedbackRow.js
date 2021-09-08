@@ -12,6 +12,7 @@ const FeedbackRow = ({ id, author, text, route, status }) => {
 
     const toggleFeedback = (e) => {
         setChecked(!checked);
+        console.log(checked, id)
     }
 
     return (
