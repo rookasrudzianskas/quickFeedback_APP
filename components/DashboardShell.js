@@ -22,7 +22,7 @@ import {NextSeo} from "next-seo";
 const DashboardShell = ({children}) => {
 
     const auth = useAuth();
-    const path = window.location.pathname;
+    const path = window?.location.pathname;
     const name = path.charAt(1).toUpperCase() + path.slice(2);
     const title = `Quick Feedback - ${name}`;
     const url =  `https://www.quickfeedback.digital${path}`;
