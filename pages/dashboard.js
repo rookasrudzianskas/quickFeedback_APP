@@ -10,6 +10,7 @@ import fetcher from "../utils/fetcher";
 import SiteTable from "@/components/SiteTable";
 import SiteTableHeader from "@/components/SiteTableHeader";
 import UpgradeEmptyState from "@/components/UpgradeEmptyState";
+import Page from "@/components/Page";
 
 
 // import {useAuth} from "@/lib/auth";
@@ -60,8 +61,15 @@ const Dashboard = () => {
     );
 };
 
+const DashboardPage = () => {
+    return (
+        <Page>
+            <Dashboard />
+        </Page>
+    )
+}
 
-export default Dashboard;
+export default DashboardPage;
 
 
 // it works finally yes
