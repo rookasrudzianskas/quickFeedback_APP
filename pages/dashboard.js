@@ -20,7 +20,7 @@ const Dashboard = () => {
     const { data, error } = useSWR(user ? ['/api/sites', user.token] : null, fetcher);
     const isPaidAccount = user?.stripeRole;
 
-    console.log(data);
+    // console.log(data);
     if(!data) {
         return (
             <DashboardShell>
