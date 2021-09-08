@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {Box, Code, IconButton, Link, Skeleton, Switch} from '@chakra-ui/core';
 import { Table, Tr, Th, Td } from './Table';
 import RemoveButton from "@/components/RemoveButton";
+import {updateFeedback} from "@/lib/db";
 
 
 const FeedbackRow = ({ id, author, text, route, status }) => {
@@ -12,7 +13,8 @@ const FeedbackRow = ({ id, author, text, route, status }) => {
 
     const toggleFeedback = (e) => {
         setChecked(!checked);
-        console.log(checked, id)
+        updateFeedback({status: checked ? 'active' : 'pending'})
+        // console.log(checked, id)
     }
 
     return (
