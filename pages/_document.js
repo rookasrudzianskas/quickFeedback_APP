@@ -28,6 +28,21 @@ class MyDocument extends Document {
                         href="https://cdn.usefathom.com"
                         crossOrigin=""
                     />
+                    <script
+                        async
+                        src="https://www.googletagmanager.com/gtag/js?id=[G-QEXM9WRB27]"
+                    />
+
+                    <script
+                        dangerouslySetInnerHTML={{
+                            __html: `
+                          window.dataLayer = window.dataLayer || [];
+                          function gtag(){dataLayer.push(arguments);}
+                          gtag('js', new Date());
+                          gtag('config', '[G-QEXM9WRB27]', { page_path: window.location.pathname });
+                        `,
+                        }}
+                    />
                     {/*<link*/}
                     {/*    href="/favicons/apple-touch-icon.png"*/}
                     {/*    rel="apple-touch-icon"*/}
