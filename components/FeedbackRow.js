@@ -5,7 +5,7 @@ import RemoveButton from "@/components/RemoveButton";
 import {updateFeedback} from "@/lib/db";
 import {auth} from "@/lib/firebase-admin";
 import {useAuth} from "@/lib/auth";
-import {mutate} from "swr";
+// import {mutate} from "swr";
 
 
 const FeedbackRow = ({ id, author, text, route, status }) => {
@@ -18,7 +18,7 @@ const FeedbackRow = ({ id, author, text, route, status }) => {
     const toggleFeedback = (e) => {
         setChecked(!checked);
         updateFeedback(id, {status: !checked ? 'active' : 'pending'});
-        mutate(['/api/feedback', auth.user.token]);
+        // mutate(['/api/feedback', auth.user.token]);
         // console.log(checked, id)
     };
 
