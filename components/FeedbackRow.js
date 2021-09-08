@@ -13,7 +13,7 @@ const FeedbackRow = ({ id, author, text, route, status }) => {
 
     const toggleFeedback = (e) => {
         setChecked(!checked);
-        updateFeedback({status: checked ? 'active' : 'pending'})
+        updateFeedback(id, {status: checked ? 'active' : 'pending'})
         // console.log(checked, id)
     }
 
