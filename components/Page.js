@@ -2,7 +2,7 @@ import React from 'react';
 import { NextSeo } from 'next-seo';
 
 const Page = ({ name, path, children }) => {
-    const title = `Quck Feedback – ${name}`;
+    const title = `Quick Feedback – ${name}`;
     const url = `https://quickfeedback.vercel.com${path}`;
 
     return (

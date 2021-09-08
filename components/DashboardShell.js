@@ -24,8 +24,7 @@ const DashboardShell = ({children}) => {
     const auth = useAuth();
 
 
-    const title = `Quick Feedback - ${name}`;
-    const url =  `https://www.quickfeedback.digital${path}`;
+
 
 
     const router = useRouter();
