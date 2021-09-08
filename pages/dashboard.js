@@ -63,7 +63,7 @@ const Dashboard = () => {
 
 const DashboardPage = () => {
     return (
-        <Page>
+        <Page name="Dashboard" path="/dashboard">
             <Dashboard />
         </Page>
     )

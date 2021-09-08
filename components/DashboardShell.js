@@ -41,14 +41,6 @@ const DashboardShell = ({children}) => {
 
     return  (
         <>
-            <NextSeo
-                title={title}
-                canonical={url}
-                openGraph={{
-                    url,
-                    title,
-                }}
-            />
             <Flex flexDirection="column" overflow="hidden">
                 <Box as='header' sx={{ position: '-webkit-sticky', /* Safari */ top: '0', }}>
 
