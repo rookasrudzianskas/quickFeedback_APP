@@ -3,7 +3,7 @@ import { NextSeo } from 'next-seo';
 
 const Page = ({ name, path, children }) => {
     const title = `Quick Feedback – ${name}`;
-    const url = `https://quickfeedback.vercel.com${path}`;
+    const url = `https://quickfeedback.digital${path}`;
 
     return (
         <>
