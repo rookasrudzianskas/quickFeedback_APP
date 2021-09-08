@@ -37,7 +37,7 @@ const FeedbackTable = ({ allFeedback }) => {
                         <Code>{'/'}</Code>
                     </Td>
                     <Td>
-                        <Switch onChange={toggleFeedback} variantColor="green" size="md" defaultIsChecked={feedback.status === 'active'} />
+                        <Switch onClick={toggleFeedback} variantColor="green" size="md" defaultIsChecked={feedback.status === 'active'} />
                     </Td>
                     <Td>
                         <RemoveButton feedbackId={feedback.id} />
