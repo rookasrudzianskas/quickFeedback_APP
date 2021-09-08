@@ -30,7 +30,7 @@ class MyDocument extends Document {
                     />
                     <script
                         async
-                        src="https://www.googletagmanager.com/gtag/js?id=[G-QEXM9WRB27]"
+                        src="https://www.googletagmanager.com/gtag/js?id=[G-04YMSG4ZHJ]"
                     />
 
                     <script
@@ -39,7 +39,7 @@ class MyDocument extends Document {
                           window.dataLayer = window.dataLayer || [];
                           function gtag(){dataLayer.push(arguments);}
                           gtag('js', new Date());
-                          gtag('config', '[G-QEXM9WRB27]', { page_path: window.location.pathname });
+                          gtag('config', '[G-04YMSG4ZHJ]', { page_path: window.location.pathname });
                         `,
                         }}
                     />
